@@ -11,6 +11,7 @@ public class VenueResponse {
 
     private Long id;
     private String name;
+    private String address;
     private Integer capacity;
     private String imageUrl;
     private String status;

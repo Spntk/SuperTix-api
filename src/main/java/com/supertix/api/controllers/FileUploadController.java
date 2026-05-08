@@ -24,14 +24,12 @@ public class FileUploadController {
     @PostMapping("/event")
     public ResponseEntity<Map<String, String>> uploadEventImage(
             @RequestParam("file") MultipartFile file) {
-        String url = fileUploadService.uploadEventImage(file);
-        return ResponseEntity.ok(Map.of("url", url));
+        return ResponseEntity.ok(fileUploadService.uploadEventImage(file));
     }
 
     @PostMapping("/venue")
     public ResponseEntity<Map<String, String>> uploadVenueImage(
             @RequestParam("file") MultipartFile file) {
-        String url = fileUploadService.uploadVenueImage(file);
-        return ResponseEntity.ok(Map.of("url", url));
+        return ResponseEntity.ok(fileUploadService.uploadVenueImage(file));
     }
 }

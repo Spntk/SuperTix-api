@@ -1,5 +1,7 @@
 package com.supertix.api.service;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -25,15 +27,25 @@ public class FileUploadService {
     @Value("${imagekit.url-endpoint}")
     private String urlEndpoint;
 
-    public String uploadEventImage(MultipartFile file) {
+    public Map<String, String> uploadEventImage(MultipartFile file) {
         return uploadToFolder(file, "/events");
     }
 
-    public String uploadVenueImage(MultipartFile file) {
+    public Map<String, String> uploadVenueImage(MultipartFile file) {
         return uploadToFolder(file, "/venues");
     }
 
-    private String uploadToFolder(MultipartFile file, String folder) {
+    public void deleteFile(String fileId) {
+        try {
+            ImageKit imageKit = ImageKit.getInstance();
+            Configuration config = new Configuration(publicKey, privateKey, urlEndpoint);
+            imageKit.setConfig(config);
+            imageKit.deleteFile(fileId);
+        } catch (Exception e) {
+        }
+    }
+
+    private Map<String, String> uploadToFolder(MultipartFile file, String folder) {
         try {
             ImageKit imageKit = ImageKit.getInstance();
             Configuration config = new Configuration(publicKey, privateKey, urlEndpoint);
@@ -45,7 +57,11 @@ public class FileUploadService {
             request.setFolder(folder);
 
             Result result = imageKit.upload(request);
-            return result.getUrl();
+
+            Map<String, String> response = new HashMap<>();
+            response.put("url", result.getUrl());
+            response.put("fileId", result.getFileId());
+            return response;
         } catch (Exception e) {
             throw new ResponseStatusException(
                     HttpStatus.INTERNAL_SERVER_ERROR, "Failed to upload file");

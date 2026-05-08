@@ -32,10 +32,16 @@ public class VenueModel {
     private String name;
 
     @Column(nullable = false)
+    private String address;
+
+    @Column(nullable = false)
     private Integer capacity;
 
     @Column(length = 1000)
     private String imageUrl;
+
+    @Column
+    private String imageFileId;
 
     @Enumerated(EnumType.STRING)
     private VenueStatus status = VenueStatus.ACTIVE;

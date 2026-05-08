@@ -18,9 +18,11 @@ import com.supertix.api.repositories.VenueRepository;
 public class VenueService {
 
     private final VenueRepository venueRepository;
+    private final FileUploadService fileUploadService;
 
-    public VenueService(VenueRepository venueRepository) {
+    public VenueService(VenueRepository venueRepository, FileUploadService fileUploadService) {
         this.venueRepository = venueRepository;
+        this.fileUploadService = fileUploadService;
     }
 
     public List<VenueResponse> getAllVenues() {
@@ -29,6 +31,7 @@ public class VenueService {
                 .map(venue -> new VenueResponse(
                         venue.getId(),
                         venue.getName(),
+                        venue.getAddress(),
                         venue.getCapacity(),
                         venue.getImageUrl(),
                         venue.getStatus().name(),
@@ -43,8 +46,11 @@ public class VenueService {
 
         VenueModel venue = new VenueModel();
         venue.setName(dto.getName());
+        venue.setAddress(dto.getAddress());
         venue.setCapacity(dto.getCapacity());
         venue.setImageUrl(dto.getImageUrl());
+        venue.setImageFileId(dto.getImageFileId());
+        venue.setStatus(dto.getStatus());
         venueRepository.save(venue);
 
         Map<String, String> response = new HashMap<>();
@@ -56,9 +62,19 @@ public class VenueService {
         VenueModel venue = venueRepository.findById(venueId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Venue not found"));
 
+        boolean hasNewImage = dto.getImageFileId() != null && !dto.getImageFileId().isEmpty();
+        boolean hasOldImage = venue.getImageFileId() != null && !venue.getImageFileId().isEmpty();
+        boolean imageChanged = hasNewImage && !dto.getImageFileId().equals(venue.getImageFileId());
+
+        if (imageChanged && hasOldImage) {
+            fileUploadService.deleteFile(venue.getImageFileId());
+        }
+
         venue.setName(dto.getName());
+        venue.setAddress(dto.getAddress());
         venue.setCapacity(dto.getCapacity());
         venue.setImageUrl(dto.getImageUrl());
+        venue.setImageFileId(dto.getImageFileId());
         venue.setStatus(dto.getStatus());
         venueRepository.save(venue);
 
@@ -71,6 +87,9 @@ public class VenueService {
         VenueModel venue = venueRepository.findById(venueId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Venue not found"));
 
+        if (venue.getImageFileId() != null) {
+            fileUploadService.deleteFile(venue.getImageFileId());
+        }
         venueRepository.delete(venue);
 
         Map<String, String> response = new HashMap<>();

@@ -1,5 +1,7 @@
 package com.supertix.api.dtos.venue;
 
+import com.supertix.api.enums.VenueStatus;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
@@ -17,5 +19,13 @@ public class VenueCreateRequest {
     @NotNull(message = "Capacity is required")
     private Integer capacity;
 
+    @NotNull(message = "Address is required")
+    private String address;
+
     private String imageUrl;
+
+    private String imageFileId;
+
+    @NotNull(message = "Status is required")
+    private VenueStatus status;
 }

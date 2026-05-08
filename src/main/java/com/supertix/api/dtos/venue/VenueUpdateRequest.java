@@ -19,7 +19,12 @@ public class VenueUpdateRequest {
     @NotNull(message = "Capacity is required")
     private Integer capacity;
 
+    @NotNull(message = "Address is required")
+    private String address;
+
     private String imageUrl;
+
+    private String imageFileId;
 
     @NotNull(message = "Status is required")
     private VenueStatus status;
