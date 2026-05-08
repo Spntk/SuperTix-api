@@ -69,4 +69,34 @@ public class AuthService {
         response.put("message", "Login successful");
         return response;
     }
+
+    public Map<String, String> refreshToken(String authHeader) {
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Invalid token");
+        }
+
+        String token = authHeader.substring(7);
+
+        if (!jwtService.isTokenValid(token)) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Token expired");
+        }
+
+        Long userId = jwtService.extractUserId(token);
+        UserModel user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
+
+        if (user.getStatus() == UserStatus.INACTIVE) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Account has been suspended");
+        }
+
+        boolean keepSignedIn = jwtService.extractClaims(token).getExpiration().getTime()
+                - jwtService.extractClaims(token).getIssuedAt().getTime() > 1000L * 60 * 60 * 24 * 2;
+
+        String newToken = jwtService.generateToken(user, keepSignedIn);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("token", newToken);
+        response.put("message", "Token refreshed");
+        return response;
+    }
 }

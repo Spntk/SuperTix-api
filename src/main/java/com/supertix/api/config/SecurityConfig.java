@@ -43,6 +43,8 @@ public class SecurityConfig {
 
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 
+                        .requestMatchers("/auth/refresh-token").authenticated()
+
                         .requestMatchers("/auth/**").permitAll()
 
                         .requestMatchers("/admin/**").hasAuthority("ADMIN")

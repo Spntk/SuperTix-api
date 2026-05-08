@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.supertix.api.dtos.event.EventCreateRequest;
+import com.supertix.api.dtos.event.EventDetailResponse;
 import com.supertix.api.dtos.event.EventResponse;
 import com.supertix.api.dtos.event.EventUpdateRequest;
 import com.supertix.api.enums.EventStatus;
@@ -53,17 +54,18 @@ public class EventService {
     }
 
     @Transactional
-    public EventResponse getEventById(Long eventId) {
+    public EventDetailResponse getEventById(Long eventId) {
         EventModel event = eventRepository.findById(eventId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Event is not found"));
 
-        return new EventResponse(
+        return new EventDetailResponse(
                 event.getId(),
                 event.getVenue().getId(),
                 event.getTitle(),
                 event.getDescription(),
                 event.getImageUrl(),
                 event.getVenue().getName(),
+                event.getVenue().getAddress(),
                 event.getStartDate().toString(),
                 event.getSaleStartDate().toString(),
                 event.getEndDate().toString(),

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.supertix.api.dtos.event.EventCreateRequest;
+import com.supertix.api.dtos.event.EventDetailResponse;
 import com.supertix.api.dtos.event.EventResponse;
 import com.supertix.api.dtos.event.EventUpdateRequest;
 import com.supertix.api.service.EventService;
@@ -41,7 +42,7 @@ public class EventController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<EventResponse> getEventById(@PathVariable Long id) {
+    public ResponseEntity<EventDetailResponse> getEventById(@PathVariable Long id) {
         return ResponseEntity.ok(eventService.getEventById(id));
     }
 

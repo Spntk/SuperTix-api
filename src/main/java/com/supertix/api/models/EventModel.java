@@ -38,6 +38,7 @@ public class EventModel {
     @Column(nullable = false)
     private String title;
 
+    @Column(columnDefinition = "TEXT")
     private String description;
 
     @Column(length = 1000)
