@@ -21,6 +21,10 @@ public class EventCreateRequest {
     @NotBlank(message = "Description is required")
     private String description;
 
+    private String imageUrl;
+
+    private String imageFileId;
+
     @NotNull(message = "Venue is required")
     private Long venueId;
 

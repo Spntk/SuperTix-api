@@ -25,10 +25,13 @@ public class EventService {
 
     private final EventRepository eventRepository;
     private final VenueRepository venueRepository;
+    private final FileUploadService fileUploadService;
 
-    public EventService(EventRepository eventRepository, VenueRepository venueRepository) {
+    public EventService(EventRepository eventRepository, VenueRepository venueRepository,
+            FileUploadService fileUploadService) {
         this.eventRepository = eventRepository;
         this.venueRepository = venueRepository;
+        this.fileUploadService = fileUploadService;
     }
 
     @Transactional
@@ -40,6 +43,7 @@ public class EventService {
                         event.getVenue().getId(),
                         event.getTitle(),
                         event.getDescription(),
+                        event.getImageUrl(),
                         event.getVenue().getName(),
                         event.getStartDate().toString(),
                         event.getSaleStartDate().toString(),
@@ -58,6 +62,7 @@ public class EventService {
                 event.getVenue().getId(),
                 event.getTitle(),
                 event.getDescription(),
+                event.getImageUrl(),
                 event.getVenue().getName(),
                 event.getStartDate().toString(),
                 event.getSaleStartDate().toString(),
@@ -78,6 +83,8 @@ public class EventService {
         event.setVenue(venue);
         event.setTitle(dto.getTitle());
         event.setDescription(dto.getDescription());
+        event.setImageUrl(dto.getImageUrl());
+        event.setImageFileId(dto.getImageFileId());
         event.setStartDate(dto.getStartDate());
         event.setSaleStartDate(dto.getSaleStartDate());
         event.setEndDate(dto.getEndDate());
@@ -96,9 +103,19 @@ public class EventService {
         VenueModel venue = venueRepository.findById(dto.getVenueId())
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Venue is not found"));
 
+        boolean hasNewImage = dto.getImageFileId() != null && !dto.getImageFileId().isEmpty();
+        boolean hasOldImage = event.getImageFileId() != null && !event.getImageFileId().isEmpty();
+        boolean imageChanged = hasNewImage && !dto.getImageFileId().equals(event.getImageFileId());
+
+        if (imageChanged && hasOldImage) {
+            fileUploadService.deleteFile(event.getImageFileId());
+        }
+
         event.setVenue(venue);
         event.setTitle(dto.getTitle());
         event.setDescription(dto.getDescription());
+        event.setImageUrl(dto.getImageUrl());
+        event.setImageFileId(dto.getImageFileId());
         event.setStartDate(dto.getStartDate());
         event.setSaleStartDate(dto.getSaleStartDate());
         event.setEndDate(dto.getEndDate());

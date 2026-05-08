@@ -20,6 +20,10 @@ public class EventUpdateRequest {
 
     private String description;
 
+    private String imageUrl;
+
+    private String imageFileId;
+
     @NotNull(message = "Venue is required")
     private Long venueId;
 

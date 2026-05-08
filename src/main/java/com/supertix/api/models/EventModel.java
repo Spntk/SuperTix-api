@@ -43,6 +43,9 @@ public class EventModel {
     @Column(length = 1000)
     private String imageUrl;
 
+    @Column
+    private String imageFileId;
+
     @Column(nullable = false)
     private LocalDateTime startDate;
 

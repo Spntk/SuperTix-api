@@ -15,6 +15,7 @@ public class EventResponse {
     private Long venueId;
     private String title;
     private String description;
+    private String imageUrl;
     private String venueName;
     private String startDate;
     private String saleStartDate;
