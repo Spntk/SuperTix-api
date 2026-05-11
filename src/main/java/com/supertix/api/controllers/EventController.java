@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.supertix.api.dtos.event.EventCreateRequest;
 import com.supertix.api.dtos.event.EventDetailResponse;
+import com.supertix.api.dtos.event.EventLayoutResponse;
 import com.supertix.api.dtos.event.EventResponse;
 import com.supertix.api.dtos.event.EventUpdateRequest;
+import com.supertix.api.service.EventLayoutService;
 import com.supertix.api.service.EventService;
 
 import jakarta.validation.Valid;
@@ -26,9 +28,11 @@ import jakarta.validation.Valid;
 public class EventController {
 
     private final EventService eventService;
+    private final EventLayoutService eventLayoutService;
 
-    public EventController(EventService eventService) {
+    public EventController(EventService eventService, EventLayoutService eventLayoutService) {
         this.eventService = eventService;
+        this.eventLayoutService = eventLayoutService;
     }
 
     @PostMapping("/create")
@@ -44,6 +48,25 @@ public class EventController {
     @GetMapping("/{id}")
     public ResponseEntity<EventDetailResponse> getEventById(@PathVariable Long id) {
         return ResponseEntity.ok(eventService.getEventById(id));
+    }
+
+    /**
+     * One-shot endpoint for the ticket-selection page.
+     * Returns the event header, the venue layout canvas, every zone with its
+     * position/orientation, and every seat with its current live status.
+     */
+    @GetMapping("/{id}/layout")
+    public ResponseEntity<EventLayoutResponse.Payload> getEventLayout(@PathVariable Long id) {
+        return ResponseEntity.ok(eventLayoutService.getEventLayout(id));
+    }
+
+    /**
+     * Admin convenience: bulk-fills sensible default layout values for any
+     * zone in this event that's missing them. Existing values are preserved.
+     */
+    @PostMapping("/{id}/layout/auto-arrange")
+    public ResponseEntity<java.util.Map<String, Object>> autoArrangeLayout(@PathVariable Long id) {
+        return ResponseEntity.ok(eventLayoutService.autoArrange(id));
     }
 
     @PutMapping("/update/{id}")

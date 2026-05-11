@@ -1,0 +1,5553 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+.gitattributes
+.gitignore
+.mvn/wrapper/maven-wrapper.properties
+Dockerfile
+mvnw
+mvnw.cmd
+pom.xml
+src/main/java/com/supertix/api/ApiApplication.java
+src/main/java/com/supertix/api/config/GlobalExceptionHandler.java
+src/main/java/com/supertix/api/config/OpenApiConfig.java
+src/main/java/com/supertix/api/config/RedisConfig.java
+src/main/java/com/supertix/api/config/SecurityConfig.java
+src/main/java/com/supertix/api/controllers/AdminOrderController.java
+src/main/java/com/supertix/api/controllers/AdminTicketController.java
+src/main/java/com/supertix/api/controllers/AdminUserController.java
+src/main/java/com/supertix/api/controllers/AuthController.java
+src/main/java/com/supertix/api/controllers/EventController.java
+src/main/java/com/supertix/api/controllers/FileUploadController.java
+src/main/java/com/supertix/api/controllers/NotificationController.java
+src/main/java/com/supertix/api/controllers/OrderController.java
+src/main/java/com/supertix/api/controllers/SeatController.java
+src/main/java/com/supertix/api/controllers/TicketController.java
+src/main/java/com/supertix/api/controllers/UserController.java
+src/main/java/com/supertix/api/controllers/VenueController.java
+src/main/java/com/supertix/api/controllers/ZoneController.java
+src/main/java/com/supertix/api/dtos/auth/SignInRequest.java
+src/main/java/com/supertix/api/dtos/auth/SignUpRequest.java
+src/main/java/com/supertix/api/dtos/event/EventCreateRequest.java
+src/main/java/com/supertix/api/dtos/event/EventDetailResponse.java
+src/main/java/com/supertix/api/dtos/event/EventLayoutResponse.java
+src/main/java/com/supertix/api/dtos/event/EventResponse.java
+src/main/java/com/supertix/api/dtos/event/EventUpdateRequest.java
+src/main/java/com/supertix/api/dtos/notification/NotificationResponse.java
+src/main/java/com/supertix/api/dtos/order/AdminOrderResponse.java
+src/main/java/com/supertix/api/dtos/order/OrderCreateRequest.java
+src/main/java/com/supertix/api/dtos/order/OrderItemResponse.java
+src/main/java/com/supertix/api/dtos/order/OrderResponse.java
+src/main/java/com/supertix/api/dtos/seat/SeatCreateRequest.java
+src/main/java/com/supertix/api/dtos/seat/SeatResponse.java
+src/main/java/com/supertix/api/dtos/seat/SeatUpdateRequest.java
+src/main/java/com/supertix/api/dtos/ticket/AdminTicketResponse.java
+src/main/java/com/supertix/api/dtos/ticket/TicketResponse.java
+src/main/java/com/supertix/api/dtos/user/UserResponse.java
+src/main/java/com/supertix/api/dtos/user/UserUpdateInfoRequest.java
+src/main/java/com/supertix/api/dtos/user/UserUpdatePasswordRequest.java
+src/main/java/com/supertix/api/dtos/user/UserUpdateRequest.java
+src/main/java/com/supertix/api/dtos/venue/VenueCreateRequest.java
+src/main/java/com/supertix/api/dtos/venue/VenueResponse.java
+src/main/java/com/supertix/api/dtos/venue/VenueUpdateRequest.java
+src/main/java/com/supertix/api/dtos/zone/ZoneCreateRequest.java
+src/main/java/com/supertix/api/dtos/zone/ZoneResponse.java
+src/main/java/com/supertix/api/dtos/zone/ZoneUpdateRequest.java
+src/main/java/com/supertix/api/enums/EventStatus.java
+src/main/java/com/supertix/api/enums/OrderStatus.java
+src/main/java/com/supertix/api/enums/StageDirection.java
+src/main/java/com/supertix/api/enums/UserRole.java
+src/main/java/com/supertix/api/enums/UserStatus.java
+src/main/java/com/supertix/api/enums/VenueStatus.java
+src/main/java/com/supertix/api/enums/ZoneShape.java
+src/main/java/com/supertix/api/enums/ZoneStatus.java
+src/main/java/com/supertix/api/enums/ZoneType.java
+src/main/java/com/supertix/api/filter/JwtFilter.java
+src/main/java/com/supertix/api/models/EventModel.java
+src/main/java/com/supertix/api/models/NotificationModel.java
+src/main/java/com/supertix/api/models/OrderItemModel.java
+src/main/java/com/supertix/api/models/OrderModel.java
+src/main/java/com/supertix/api/models/SeatModel.java
+src/main/java/com/supertix/api/models/TicketModel.java
+src/main/java/com/supertix/api/models/UserModel.java
+src/main/java/com/supertix/api/models/VenueModel.java
+src/main/java/com/supertix/api/models/ZoneModel.java
+src/main/java/com/supertix/api/repositories/EventRepository.java
+src/main/java/com/supertix/api/repositories/NotificationRepository.java
+src/main/java/com/supertix/api/repositories/OrderItemRepository.java
+src/main/java/com/supertix/api/repositories/OrderRepository.java
+src/main/java/com/supertix/api/repositories/SeatRepository.java
+src/main/java/com/supertix/api/repositories/TicketRepository.java
+src/main/java/com/supertix/api/repositories/UserRepository.java
+src/main/java/com/supertix/api/repositories/VenueRepository.java
+src/main/java/com/supertix/api/repositories/ZoneRepository.java
+src/main/java/com/supertix/api/service/AuthService.java
+src/main/java/com/supertix/api/service/EventLayoutService.java
+src/main/java/com/supertix/api/service/EventService.java
+src/main/java/com/supertix/api/service/FileUploadService.java
+src/main/java/com/supertix/api/service/JwtService.java
+src/main/java/com/supertix/api/service/NotificationService.java
+src/main/java/com/supertix/api/service/OrderService.java
+src/main/java/com/supertix/api/service/SeatService.java
+src/main/java/com/supertix/api/service/TicketService.java
+src/main/java/com/supertix/api/service/UserService.java
+src/main/java/com/supertix/api/service/VenueService.java
+src/main/java/com/supertix/api/service/ZoneService.java
+src/main/resources/application.properties
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="Dockerfile">
+# Stage 1 — Build
+FROM maven:3.9-eclipse-temurin-21 AS build
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn clean package -DskipTests
+
+# Stage 2 — Run
+FROM eclipse-temurin:21-jre
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/event/EventLayoutResponse.java">
+package com.supertix.api.dtos.event;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+import com.supertix.api.enums.EventStatus;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+/**
+ * One-shot payload for the /events/{id}/tickets page.
+ *
+ * Returns:
+ *   - the event header
+ *   - the venue layout canvas (size + optional background image)
+ *   - every zone with its full layout config (position, size, rotation,
+ *     z-index, shape, polygon, fill/border overrides, label offset,
+ *     stage direction, parent-zone for adjacency)
+ *   - every seat with its grid coordinates + live status
+ *   - per-zone, the full chain of "in front of stage" zone ids derived
+ *     from parentZone, so the frontend doesn't have to guess from coords.
+ *
+ * No layout values are synthesized — what the admin configured is what
+ * the client sees. Zones lacking layout fields are returned with nulls and
+ * the frontend renders a "Layout not configured" state.
+ */
+public class EventLayoutResponse {
+
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class EventInfo {
+        private Long id;
+        private String title;
+        private String venueName;
+        private String startDate;
+        private EventStatus status;
+    }
+
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class VenueLayout {
+        private Long id;
+        private String name;
+        private Integer layoutWidth;
+        private Integer layoutHeight;
+        private String mapImageUrl;
+    }
+
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class SeatLayout {
+        private Long id;
+        private String rowLabel;
+        private Integer seatNumber;
+        private Integer rowIndex;
+        private Integer colIndex;
+        private Integer displayOrder;
+        private String status;
+    }
+
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class ZoneLayout {
+        private Long id;
+        private String name;
+        private String type;
+        private String status;
+        private BigDecimal price;
+        private Integer capacity;
+
+        // Position / size on the venue map (nullable when not configured)
+        private Integer layoutX;
+        private Integer layoutY;
+        private Integer layoutWidth;
+        private Integer layoutHeight;
+
+        // Seat grid + stage placement for the zone-detail view
+        private Integer rowCount;
+        private Integer colCount;
+        private String stageDirection;
+        private Integer displayOrder;
+
+        // Visual config (all nullable — frontend falls back to type-based color)
+        private Integer rotationDeg;
+        private Integer zIndex;
+        private String shape;
+        private String polygonPoints;
+        private String fillColor;
+        private String borderColor;
+        private Integer labelOffsetX;
+        private Integer labelOffsetY;
+
+        // Adjacency
+        private Long parentZoneId;
+        /**
+         * Resolved chain: every zone id from this zone toward the stage.
+         * Empty when there's no parent. The frontend uses this list verbatim
+         * to render "Section X • Section Y" hints between the stage and the
+         * seat grid — no client-side guessing.
+         */
+        private List<Long> zonesInFrontIds;
+
+        private List<SeatLayout> seats;
+    }
+
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class Payload {
+        private EventInfo event;
+        private VenueLayout venue;
+        private List<ZoneLayout> zones;
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/enums/StageDirection.java">
+package com.supertix.api.enums;
+
+/**
+ * Direction of the stage as seen from inside the zone.
+ *
+ * Used to flip / rotate the seat grid so that the stage label is rendered
+ * on the correct side of the user's seat view (front, behind, left, right).
+ *
+ * Examples:
+ *   - VIP zone (in front of the stage)        -> NORTH (stage above the seats)
+ *   - Premium zone (behind VIP, facing stage) -> NORTH
+ *   - Upper-left side stand                   -> EAST  (stage to the right of seats)
+ *   - Upper-right side stand                  -> WEST  (stage to the left of seats)
+ *   - Back-stage / behind-stage zone          -> SOUTH (stage below seats)
+ */
+public enum StageDirection {
+    NORTH,
+    SOUTH,
+    EAST,
+    WEST
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/enums/ZoneShape.java">
+package com.supertix.api.enums;
+
+/**
+ * Geometric shape used to render a zone on the venue map.
+ *
+ *   RECT       - axis-aligned rectangle (default)
+ *   ROUND_RECT - rectangle with rounded corners
+ *   ELLIPSE    - ellipse / oval
+ *   POLYGON    - arbitrary polygon — points are read from
+ *                {@code ZoneModel.polygonPoints} as a JSON array of
+ *                [x, y] pairs in venue-canvas coordinates.
+ */
+public enum ZoneShape {
+    RECT,
+    ROUND_RECT,
+    ELLIPSE,
+    POLYGON
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/service/EventLayoutService.java">
+package com.supertix.api.service;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import com.supertix.api.dtos.event.EventLayoutResponse;
+import com.supertix.api.enums.StageDirection;
+import com.supertix.api.enums.ZoneShape;
+import com.supertix.api.models.EventModel;
+import com.supertix.api.models.SeatModel;
+import com.supertix.api.models.VenueModel;
+import com.supertix.api.models.ZoneModel;
+import com.supertix.api.repositories.EventRepository;
+import com.supertix.api.repositories.SeatRepository;
+import com.supertix.api.repositories.ZoneRepository;
+
+import jakarta.transaction.Transactional;
+
+/**
+ * Builds the combined event-layout payload that powers the public ticket
+ * picker page (full venue map + per-zone seat grid + live seat status).
+ *
+ * IMPORTANT: this service does NOT synthesize layout coordinates. Whatever
+ * the admin configured is what the client receives — null fields stay null
+ * so the frontend can show a "Layout not yet configured" state. All visual
+ * positioning is therefore data-driven.
+ */
+@Service
+public class EventLayoutService {
+
+    private final EventRepository eventRepository;
+    private final ZoneRepository zoneRepository;
+    private final SeatRepository seatRepository;
+    private final SeatService seatService;
+
+    public EventLayoutService(EventRepository eventRepository,
+                              ZoneRepository zoneRepository,
+                              SeatRepository seatRepository,
+                              SeatService seatService) {
+        this.eventRepository = eventRepository;
+        this.zoneRepository = zoneRepository;
+        this.seatRepository = seatRepository;
+        this.seatService = seatService;
+    }
+
+    @Transactional
+    public EventLayoutResponse.Payload getEventLayout(Long eventId) {
+        EventModel event = eventRepository.findById(eventId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Event not found"));
+
+        VenueModel venue = event.getVenue();
+        List<ZoneModel> zones = zoneRepository.findByEventId(eventId);
+
+        // Group seats by zone with a single query — avoids N+1 over many zones.
+        List<SeatModel> allSeats = seatRepository.findByZoneEventId(eventId);
+        Map<Long, List<SeatModel>> seatsByZone = allSeats.stream()
+                .collect(Collectors.groupingBy(s -> s.getZone().getId()));
+
+        // Index zones by id so we can walk the parentZone chain without
+        // another DB hit per zone.
+        Map<Long, ZoneModel> zoneById = zones.stream()
+                .collect(Collectors.toMap(ZoneModel::getId, z -> z));
+
+        // Sort by zIndex (ascending — higher z renders later/on top), then displayOrder.
+        zones.sort(Comparator
+                .comparingInt((ZoneModel z) -> z.getZIndex() != null ? z.getZIndex() : 0)
+                .thenComparingInt(z -> z.getDisplayOrder() != null ? z.getDisplayOrder() : 0));
+
+        List<EventLayoutResponse.ZoneLayout> zoneLayouts = zones.stream()
+                .map(z -> mapZone(z, seatsByZone.getOrDefault(z.getId(), List.of()), zoneById))
+                .toList();
+
+        EventLayoutResponse.EventInfo info = new EventLayoutResponse.EventInfo(
+                event.getId(),
+                event.getTitle(),
+                venue.getName(),
+                event.getStartDate().toString(),
+                event.getStatus());
+
+        EventLayoutResponse.VenueLayout venueLayout = new EventLayoutResponse.VenueLayout(
+                venue.getId(),
+                venue.getName(),
+                venue.getLayoutWidth(),
+                venue.getLayoutHeight(),
+                venue.getMapImageUrl());
+
+        return new EventLayoutResponse.Payload(info, venueLayout, zoneLayouts);
+    }
+
+    /**
+     * Bulk-fills sensible default layout for every zone in an event that doesn't
+     * have one yet. Lets an admin go from "I just created some zones" to a
+     * working venue map with one click — no need to type pixel coordinates.
+     *
+     * Defaults applied per zone (only when the field is null):
+     *   - venue.layoutWidth / layoutHeight default to 1000 x 700 if missing
+     *   - zones are tiled in a grid below a 120px stage strip on top
+     *   - stageDirection: zones in the leftmost column → EAST,
+     *     rightmost column → WEST, middle columns → NORTH
+     *   - shape: RECT
+     *   - rowCount: a sensible square-ish split based on capacity
+     *   - colCount: capacity / rowCount
+     *   - zIndex / displayOrder: ascending by creation order
+     *
+     * Existing values are NEVER overwritten — admins can fine-tune any zone
+     * and re-run auto-arrange to fill in just the new ones.
+     */
+    @Transactional
+    public Map<String, Object> autoArrange(Long eventId) {
+        EventModel event = eventRepository.findById(eventId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Event not found"));
+
+        VenueModel venue = event.getVenue();
+        if (venue.getLayoutWidth() == null) venue.setLayoutWidth(1000);
+        if (venue.getLayoutHeight() == null) venue.setLayoutHeight(700);
+        int canvasW = venue.getLayoutWidth();
+        int canvasH = venue.getLayoutHeight();
+
+        List<ZoneModel> zones = zoneRepository.findByEventId(eventId);
+        zones.sort(Comparator.comparing(ZoneModel::getId));
+
+        int total = zones.size();
+        int cols = Math.max(1, Math.min(3, total));
+        int rows = (int) Math.ceil(total / (double) cols);
+        int stageStripH = 120;
+        int cellW = canvasW / cols;
+        int cellH = (canvasH - stageStripH) / Math.max(rows, 1);
+
+        int filled = 0;
+        for (int i = 0; i < zones.size(); i++) {
+            ZoneModel z = zones.get(i);
+            int col = i % cols;
+            int row = i / cols;
+            boolean changed = false;
+
+            if (z.getLayoutX() == null) { z.setLayoutX(col * cellW + 20); changed = true; }
+            if (z.getLayoutY() == null) { z.setLayoutY(stageStripH + row * cellH + 10); changed = true; }
+            if (z.getLayoutWidth() == null) { z.setLayoutWidth(cellW - 40); changed = true; }
+            if (z.getLayoutHeight() == null) { z.setLayoutHeight(cellH - 20); changed = true; }
+
+            if (z.getStageDirection() == null) {
+                StageDirection sd;
+                if (cols >= 3 && col == 0) sd = StageDirection.EAST;
+                else if (cols >= 3 && col == cols - 1) sd = StageDirection.WEST;
+                else sd = StageDirection.NORTH;
+                z.setStageDirection(sd);
+                changed = true;
+            }
+            if (z.getShape() == null) { z.setShape(ZoneShape.RECT); changed = true; }
+            if (z.getZIndex() == null) { z.setZIndex(i); changed = true; }
+            if (z.getDisplayOrder() == null) { z.setDisplayOrder(i); changed = true; }
+
+            // Sensible row/col split — square-ish based on capacity.
+            if (z.getRowCount() == null || z.getColCount() == null) {
+                int cap = z.getCapacity() != null ? z.getCapacity() : 1;
+                int rowGuess = Math.max(1, (int) Math.round(Math.sqrt(cap / 2.0)));
+                int colGuess = (int) Math.ceil(cap / (double) rowGuess);
+                if (z.getRowCount() == null) z.setRowCount(rowGuess);
+                if (z.getColCount() == null) z.setColCount(colGuess);
+                changed = true;
+            }
+
+            if (changed) {
+                zoneRepository.save(z);
+                filled++;
+            }
+        }
+
+        Map<String, Object> response = new java.util.HashMap<>();
+        response.put("message", "Auto-arrange completed");
+        response.put("zonesUpdated", filled);
+        response.put("venueLayoutWidth", canvasW);
+        response.put("venueLayoutHeight", canvasH);
+        return response;
+    }
+
+    private EventLayoutResponse.ZoneLayout mapZone(ZoneModel zone,
+                                                   List<SeatModel> seats,
+                                                   Map<Long, ZoneModel> zoneById) {
+
+        // Map seats. If row/col indices are missing (legacy data), derive from
+        // alphabetical row label and 1-based seat number so the grid still renders.
+        List<String> distinctRows = seats.stream()
+                .map(SeatModel::getRowLabel)
+                .distinct()
+                .sorted()
+                .toList();
+
+        List<EventLayoutResponse.SeatLayout> seatLayouts = seats.stream()
+                .map(s -> new EventLayoutResponse.SeatLayout(
+                        s.getId(),
+                        s.getRowLabel(),
+                        s.getSeatNumber(),
+                        s.getRowIndex() != null ? s.getRowIndex() : distinctRows.indexOf(s.getRowLabel()),
+                        s.getColIndex() != null ? s.getColIndex() : (s.getSeatNumber() - 1),
+                        s.getDisplayOrder() != null ? s.getDisplayOrder() : s.getSeatNumber(),
+                        seatService.resolveSeatStatus(s.getId())))
+                .sorted(Comparator
+                        .<EventLayoutResponse.SeatLayout, Integer>comparing(
+                                s -> s.getRowIndex() != null ? s.getRowIndex() : 0)
+                        .thenComparing(s -> s.getColIndex() != null ? s.getColIndex() : 0))
+                .toList();
+
+        // Walk the parent-zone chain to build the explicit "in front of stage" list.
+        // Cycles are prevented in ZoneService.updateZone but we re-guard here.
+        List<Long> zonesInFrontIds = new ArrayList<>();
+        Set<Long> seen = new HashSet<>();
+        seen.add(zone.getId());
+        ZoneModel cursor = zone.getParentZone();
+        while (cursor != null && seen.add(cursor.getId())) {
+            zonesInFrontIds.add(cursor.getId());
+            // Re-fetch from the in-memory map so we follow the chain without
+            // touching the lazy proxy again.
+            cursor = zoneById.get(cursor.getId()) != null
+                    ? zoneById.get(cursor.getId()).getParentZone()
+                    : null;
+        }
+
+        return new EventLayoutResponse.ZoneLayout(
+                zone.getId(),
+                zone.getName(),
+                zone.getType() != null ? zone.getType().name() : null,
+                zone.getStatus() != null ? zone.getStatus().name() : "AVAILABLE",
+                zone.getPrice(),
+                zone.getCapacity(),
+                zone.getLayoutX(),
+                zone.getLayoutY(),
+                zone.getLayoutWidth(),
+                zone.getLayoutHeight(),
+                zone.getRowCount(),
+                zone.getColCount(),
+                zone.getStageDirection() != null ? zone.getStageDirection().name() : null,
+                zone.getDisplayOrder(),
+                zone.getRotationDeg(),
+                zone.getZIndex(),
+                zone.getShape() != null ? zone.getShape().name() : null,
+                zone.getPolygonPoints(),
+                zone.getFillColor(),
+                zone.getBorderColor(),
+                zone.getLabelOffsetX(),
+                zone.getLabelOffsetY(),
+                zone.getParentZone() != null ? zone.getParentZone().getId() : null,
+                zonesInFrontIds,
+                seatLayouts);
+    }
+}
+</file>
+
+<file path=".gitattributes">
+/mvnw text eol=lf
+*.cmd text eol=crlf
+</file>
+
+<file path=".gitignore">
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+application-local.properties
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+</file>
+
+<file path=".mvn/wrapper/maven-wrapper.properties">
+wrapperVersion=3.3.4
+distributionType=only-script
+distributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.15/apache-maven-3.9.15-bin.zip
+</file>
+
+<file path="mvnw">
+#!/bin/sh
+# ----------------------------------------------------------------------------
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+# ----------------------------------------------------------------------------
+
+# ----------------------------------------------------------------------------
+# Apache Maven Wrapper startup batch script, version 3.3.4
+#
+# Optional ENV vars
+# -----------------
+#   JAVA_HOME - location of a JDK home dir, required when download maven via java source
+#   MVNW_REPOURL - repo url base for downloading maven distribution
+#   MVNW_USERNAME/MVNW_PASSWORD - user and password for downloading maven
+#   MVNW_VERBOSE - true: enable verbose log; debug: trace the mvnw script; others: silence the output
+# ----------------------------------------------------------------------------
+
+set -euf
+[ "${MVNW_VERBOSE-}" != debug ] || set -x
+
+# OS specific support.
+native_path() { printf %s\\n "$1"; }
+case "$(uname)" in
+CYGWIN* | MINGW*)
+  [ -z "${JAVA_HOME-}" ] || JAVA_HOME="$(cygpath --unix "$JAVA_HOME")"
+  native_path() { cygpath --path --windows "$1"; }
+  ;;
+esac
+
+# set JAVACMD and JAVACCMD
+set_java_home() {
+  # For Cygwin and MinGW, ensure paths are in Unix format before anything is touched
+  if [ -n "${JAVA_HOME-}" ]; then
+    if [ -x "$JAVA_HOME/jre/sh/java" ]; then
+      # IBM's JDK on AIX uses strange locations for the executables
+      JAVACMD="$JAVA_HOME/jre/sh/java"
+      JAVACCMD="$JAVA_HOME/jre/sh/javac"
+    else
+      JAVACMD="$JAVA_HOME/bin/java"
+      JAVACCMD="$JAVA_HOME/bin/javac"
+
+      if [ ! -x "$JAVACMD" ] || [ ! -x "$JAVACCMD" ]; then
+        echo "The JAVA_HOME environment variable is not defined correctly, so mvnw cannot run." >&2
+        echo "JAVA_HOME is set to \"$JAVA_HOME\", but \"\$JAVA_HOME/bin/java\" or \"\$JAVA_HOME/bin/javac\" does not exist." >&2
+        return 1
+      fi
+    fi
+  else
+    JAVACMD="$(
+      'set' +e
+      'unset' -f command 2>/dev/null
+      'command' -v java
+    )" || :
+    JAVACCMD="$(
+      'set' +e
+      'unset' -f command 2>/dev/null
+      'command' -v javac
+    )" || :
+
+    if [ ! -x "${JAVACMD-}" ] || [ ! -x "${JAVACCMD-}" ]; then
+      echo "The java/javac command does not exist in PATH nor is JAVA_HOME set, so mvnw cannot run." >&2
+      return 1
+    fi
+  fi
+}
+
+# hash string like Java String::hashCode
+hash_string() {
+  str="${1:-}" h=0
+  while [ -n "$str" ]; do
+    char="${str%"${str#?}"}"
+    h=$(((h * 31 + $(LC_CTYPE=C printf %d "'$char")) % 4294967296))
+    str="${str#?}"
+  done
+  printf %x\\n $h
+}
+
+verbose() { :; }
+[ "${MVNW_VERBOSE-}" != true ] || verbose() { printf %s\\n "${1-}"; }
+
+die() {
+  printf %s\\n "$1" >&2
+  exit 1
+}
+
+trim() {
+  # MWRAPPER-139:
+  #   Trims trailing and leading whitespace, carriage returns, tabs, and linefeeds.
+  #   Needed for removing poorly interpreted newline sequences when running in more
+  #   exotic environments such as mingw bash on Windows.
+  printf "%s" "${1}" | tr -d '[:space:]'
+}
+
+scriptDir="$(dirname "$0")"
+scriptName="$(basename "$0")"
+
+# parse distributionUrl and optional distributionSha256Sum, requires .mvn/wrapper/maven-wrapper.properties
+while IFS="=" read -r key value; do
+  case "${key-}" in
+  distributionUrl) distributionUrl=$(trim "${value-}") ;;
+  distributionSha256Sum) distributionSha256Sum=$(trim "${value-}") ;;
+  esac
+done <"$scriptDir/.mvn/wrapper/maven-wrapper.properties"
+[ -n "${distributionUrl-}" ] || die "cannot read distributionUrl property in $scriptDir/.mvn/wrapper/maven-wrapper.properties"
+
+case "${distributionUrl##*/}" in
+maven-mvnd-*bin.*)
+  MVN_CMD=mvnd.sh _MVNW_REPO_PATTERN=/maven/mvnd/
+  case "${PROCESSOR_ARCHITECTURE-}${PROCESSOR_ARCHITEW6432-}:$(uname -a)" in
+  *AMD64:CYGWIN* | *AMD64:MINGW*) distributionPlatform=windows-amd64 ;;
+  :Darwin*x86_64) distributionPlatform=darwin-amd64 ;;
+  :Darwin*arm64) distributionPlatform=darwin-aarch64 ;;
+  :Linux*x86_64*) distributionPlatform=linux-amd64 ;;
+  *)
+    echo "Cannot detect native platform for mvnd on $(uname)-$(uname -m), use pure java version" >&2
+    distributionPlatform=linux-amd64
+    ;;
+  esac
+  distributionUrl="${distributionUrl%-bin.*}-$distributionPlatform.zip"
+  ;;
+maven-mvnd-*) MVN_CMD=mvnd.sh _MVNW_REPO_PATTERN=/maven/mvnd/ ;;
+*) MVN_CMD="mvn${scriptName#mvnw}" _MVNW_REPO_PATTERN=/org/apache/maven/ ;;
+esac
+
+# apply MVNW_REPOURL and calculate MAVEN_HOME
+# maven home pattern: ~/.m2/wrapper/dists/{apache-maven-<version>,maven-mvnd-<version>-<platform>}/<hash>
+[ -z "${MVNW_REPOURL-}" ] || distributionUrl="$MVNW_REPOURL$_MVNW_REPO_PATTERN${distributionUrl#*"$_MVNW_REPO_PATTERN"}"
+distributionUrlName="${distributionUrl##*/}"
+distributionUrlNameMain="${distributionUrlName%.*}"
+distributionUrlNameMain="${distributionUrlNameMain%-bin}"
+MAVEN_USER_HOME="${MAVEN_USER_HOME:-${HOME}/.m2}"
+MAVEN_HOME="${MAVEN_USER_HOME}/wrapper/dists/${distributionUrlNameMain-}/$(hash_string "$distributionUrl")"
+
+exec_maven() {
+  unset MVNW_VERBOSE MVNW_USERNAME MVNW_PASSWORD MVNW_REPOURL || :
+  exec "$MAVEN_HOME/bin/$MVN_CMD" "$@" || die "cannot exec $MAVEN_HOME/bin/$MVN_CMD"
+}
+
+if [ -d "$MAVEN_HOME" ]; then
+  verbose "found existing MAVEN_HOME at $MAVEN_HOME"
+  exec_maven "$@"
+fi
+
+case "${distributionUrl-}" in
+*?-bin.zip | *?maven-mvnd-?*-?*.zip) ;;
+*) die "distributionUrl is not valid, must match *-bin.zip or maven-mvnd-*.zip, but found '${distributionUrl-}'" ;;
+esac
+
+# prepare tmp dir
+if TMP_DOWNLOAD_DIR="$(mktemp -d)" && [ -d "$TMP_DOWNLOAD_DIR" ]; then
+  clean() { rm -rf -- "$TMP_DOWNLOAD_DIR"; }
+  trap clean HUP INT TERM EXIT
+else
+  die "cannot create temp dir"
+fi
+
+mkdir -p -- "${MAVEN_HOME%/*}"
+
+# Download and Install Apache Maven
+verbose "Couldn't find MAVEN_HOME, downloading and installing it ..."
+verbose "Downloading from: $distributionUrl"
+verbose "Downloading to: $TMP_DOWNLOAD_DIR/$distributionUrlName"
+
+# select .zip or .tar.gz
+if ! command -v unzip >/dev/null; then
+  distributionUrl="${distributionUrl%.zip}.tar.gz"
+  distributionUrlName="${distributionUrl##*/}"
+fi
+
+# verbose opt
+__MVNW_QUIET_WGET=--quiet __MVNW_QUIET_CURL=--silent __MVNW_QUIET_UNZIP=-q __MVNW_QUIET_TAR=''
+[ "${MVNW_VERBOSE-}" != true ] || __MVNW_QUIET_WGET='' __MVNW_QUIET_CURL='' __MVNW_QUIET_UNZIP='' __MVNW_QUIET_TAR=v
+
+# normalize http auth
+case "${MVNW_PASSWORD:+has-password}" in
+'') MVNW_USERNAME='' MVNW_PASSWORD='' ;;
+has-password) [ -n "${MVNW_USERNAME-}" ] || MVNW_USERNAME='' MVNW_PASSWORD='' ;;
+esac
+
+if [ -z "${MVNW_USERNAME-}" ] && command -v wget >/dev/null; then
+  verbose "Found wget ... using wget"
+  wget ${__MVNW_QUIET_WGET:+"$__MVNW_QUIET_WGET"} "$distributionUrl" -O "$TMP_DOWNLOAD_DIR/$distributionUrlName" || die "wget: Failed to fetch $distributionUrl"
+elif [ -z "${MVNW_USERNAME-}" ] && command -v curl >/dev/null; then
+  verbose "Found curl ... using curl"
+  curl ${__MVNW_QUIET_CURL:+"$__MVNW_QUIET_CURL"} -f -L -o "$TMP_DOWNLOAD_DIR/$distributionUrlName" "$distributionUrl" || die "curl: Failed to fetch $distributionUrl"
+elif set_java_home; then
+  verbose "Falling back to use Java to download"
+  javaSource="$TMP_DOWNLOAD_DIR/Downloader.java"
+  targetZip="$TMP_DOWNLOAD_DIR/$distributionUrlName"
+  cat >"$javaSource" <<-END
+	public class Downloader extends java.net.Authenticator
+	{
+	  protected java.net.PasswordAuthentication getPasswordAuthentication()
+	  {
+	    return new java.net.PasswordAuthentication( System.getenv( "MVNW_USERNAME" ), System.getenv( "MVNW_PASSWORD" ).toCharArray() );
+	  }
+	  public static void main( String[] args ) throws Exception
+	  {
+	    setDefault( new Downloader() );
+	    java.nio.file.Files.copy( java.net.URI.create( args[0] ).toURL().openStream(), java.nio.file.Paths.get( args[1] ).toAbsolutePath().normalize() );
+	  }
+	}
+	END
+  # For Cygwin/MinGW, switch paths to Windows format before running javac and java
+  verbose " - Compiling Downloader.java ..."
+  "$(native_path "$JAVACCMD")" "$(native_path "$javaSource")" || die "Failed to compile Downloader.java"
+  verbose " - Running Downloader.java ..."
+  "$(native_path "$JAVACMD")" -cp "$(native_path "$TMP_DOWNLOAD_DIR")" Downloader "$distributionUrl" "$(native_path "$targetZip")"
+fi
+
+# If specified, validate the SHA-256 sum of the Maven distribution zip file
+if [ -n "${distributionSha256Sum-}" ]; then
+  distributionSha256Result=false
+  if [ "$MVN_CMD" = mvnd.sh ]; then
+    echo "Checksum validation is not supported for maven-mvnd." >&2
+    echo "Please disable validation by removing 'distributionSha256Sum' from your maven-wrapper.properties." >&2
+    exit 1
+  elif command -v sha256sum >/dev/null; then
+    if echo "$distributionSha256Sum  $TMP_DOWNLOAD_DIR/$distributionUrlName" | sha256sum -c - >/dev/null 2>&1; then
+      distributionSha256Result=true
+    fi
+  elif command -v shasum >/dev/null; then
+    if echo "$distributionSha256Sum  $TMP_DOWNLOAD_DIR/$distributionUrlName" | shasum -a 256 -c >/dev/null 2>&1; then
+      distributionSha256Result=true
+    fi
+  else
+    echo "Checksum validation was requested but neither 'sha256sum' or 'shasum' are available." >&2
+    echo "Please install either command, or disable validation by removing 'distributionSha256Sum' from your maven-wrapper.properties." >&2
+    exit 1
+  fi
+  if [ $distributionSha256Result = false ]; then
+    echo "Error: Failed to validate Maven distribution SHA-256, your Maven distribution might be compromised." >&2
+    echo "If you updated your Maven version, you need to update the specified distributionSha256Sum property." >&2
+    exit 1
+  fi
+fi
+
+# unzip and move
+if command -v unzip >/dev/null; then
+  unzip ${__MVNW_QUIET_UNZIP:+"$__MVNW_QUIET_UNZIP"} "$TMP_DOWNLOAD_DIR/$distributionUrlName" -d "$TMP_DOWNLOAD_DIR" || die "failed to unzip"
+else
+  tar xzf${__MVNW_QUIET_TAR:+"$__MVNW_QUIET_TAR"} "$TMP_DOWNLOAD_DIR/$distributionUrlName" -C "$TMP_DOWNLOAD_DIR" || die "failed to untar"
+fi
+
+# Find the actual extracted directory name (handles snapshots where filename != directory name)
+actualDistributionDir=""
+
+# First try the expected directory name (for regular distributions)
+if [ -d "$TMP_DOWNLOAD_DIR/$distributionUrlNameMain" ]; then
+  if [ -f "$TMP_DOWNLOAD_DIR/$distributionUrlNameMain/bin/$MVN_CMD" ]; then
+    actualDistributionDir="$distributionUrlNameMain"
+  fi
+fi
+
+# If not found, search for any directory with the Maven executable (for snapshots)
+if [ -z "$actualDistributionDir" ]; then
+  # enable globbing to iterate over items
+  set +f
+  for dir in "$TMP_DOWNLOAD_DIR"/*; do
+    if [ -d "$dir" ]; then
+      if [ -f "$dir/bin/$MVN_CMD" ]; then
+        actualDistributionDir="$(basename "$dir")"
+        break
+      fi
+    fi
+  done
+  set -f
+fi
+
+if [ -z "$actualDistributionDir" ]; then
+  verbose "Contents of $TMP_DOWNLOAD_DIR:"
+  verbose "$(ls -la "$TMP_DOWNLOAD_DIR")"
+  die "Could not find Maven distribution directory in extracted archive"
+fi
+
+verbose "Found extracted Maven distribution directory: $actualDistributionDir"
+printf %s\\n "$distributionUrl" >"$TMP_DOWNLOAD_DIR/$actualDistributionDir/mvnw.url"
+mv -- "$TMP_DOWNLOAD_DIR/$actualDistributionDir" "$MAVEN_HOME" || [ -d "$MAVEN_HOME" ] || die "fail to move MAVEN_HOME"
+
+clean || :
+exec_maven "$@"
+</file>
+
+<file path="mvnw.cmd">
+<# : batch portion
+@REM ----------------------------------------------------------------------------
+@REM Licensed to the Apache Software Foundation (ASF) under one
+@REM or more contributor license agreements.  See the NOTICE file
+@REM distributed with this work for additional information
+@REM regarding copyright ownership.  The ASF licenses this file
+@REM to you under the Apache License, Version 2.0 (the
+@REM "License"); you may not use this file except in compliance
+@REM with the License.  You may obtain a copy of the License at
+@REM
+@REM    http://www.apache.org/licenses/LICENSE-2.0
+@REM
+@REM Unless required by applicable law or agreed to in writing,
+@REM software distributed under the License is distributed on an
+@REM "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+@REM KIND, either express or implied.  See the License for the
+@REM specific language governing permissions and limitations
+@REM under the License.
+@REM ----------------------------------------------------------------------------
+
+@REM ----------------------------------------------------------------------------
+@REM Apache Maven Wrapper startup batch script, version 3.3.4
+@REM
+@REM Optional ENV vars
+@REM   MVNW_REPOURL - repo url base for downloading maven distribution
+@REM   MVNW_USERNAME/MVNW_PASSWORD - user and password for downloading maven
+@REM   MVNW_VERBOSE - true: enable verbose log; others: silence the output
+@REM ----------------------------------------------------------------------------
+
+@IF "%__MVNW_ARG0_NAME__%"=="" (SET __MVNW_ARG0_NAME__=%~nx0)
+@SET __MVNW_CMD__=
+@SET __MVNW_ERROR__=
+@SET __MVNW_PSMODULEP_SAVE=%PSModulePath%
+@SET PSModulePath=
+@FOR /F "usebackq tokens=1* delims==" %%A IN (`powershell -noprofile "& {$scriptDir='%~dp0'; $script='%__MVNW_ARG0_NAME__%'; icm -ScriptBlock ([Scriptblock]::Create((Get-Content -Raw '%~f0'))) -NoNewScope}"`) DO @(
+  IF "%%A"=="MVN_CMD" (set __MVNW_CMD__=%%B) ELSE IF "%%B"=="" (echo %%A) ELSE (echo %%A=%%B)
+)
+@SET PSModulePath=%__MVNW_PSMODULEP_SAVE%
+@SET __MVNW_PSMODULEP_SAVE=
+@SET __MVNW_ARG0_NAME__=
+@SET MVNW_USERNAME=
+@SET MVNW_PASSWORD=
+@IF NOT "%__MVNW_CMD__%"=="" ("%__MVNW_CMD__%" %*)
+@echo Cannot start maven from wrapper >&2 && exit /b 1
+@GOTO :EOF
+: end batch / begin powershell #>
+
+$ErrorActionPreference = "Stop"
+if ($env:MVNW_VERBOSE -eq "true") {
+  $VerbosePreference = "Continue"
+}
+
+# calculate distributionUrl, requires .mvn/wrapper/maven-wrapper.properties
+$distributionUrl = (Get-Content -Raw "$scriptDir/.mvn/wrapper/maven-wrapper.properties" | ConvertFrom-StringData).distributionUrl
+if (!$distributionUrl) {
+  Write-Error "cannot read distributionUrl property in $scriptDir/.mvn/wrapper/maven-wrapper.properties"
+}
+
+switch -wildcard -casesensitive ( $($distributionUrl -replace '^.*/','') ) {
+  "maven-mvnd-*" {
+    $USE_MVND = $true
+    $distributionUrl = $distributionUrl -replace '-bin\.[^.]*$',"-windows-amd64.zip"
+    $MVN_CMD = "mvnd.cmd"
+    break
+  }
+  default {
+    $USE_MVND = $false
+    $MVN_CMD = $script -replace '^mvnw','mvn'
+    break
+  }
+}
+
+# apply MVNW_REPOURL and calculate MAVEN_HOME
+# maven home pattern: ~/.m2/wrapper/dists/{apache-maven-<version>,maven-mvnd-<version>-<platform>}/<hash>
+if ($env:MVNW_REPOURL) {
+  $MVNW_REPO_PATTERN = if ($USE_MVND -eq $False) { "/org/apache/maven/" } else { "/maven/mvnd/" }
+  $distributionUrl = "$env:MVNW_REPOURL$MVNW_REPO_PATTERN$($distributionUrl -replace "^.*$MVNW_REPO_PATTERN",'')"
+}
+$distributionUrlName = $distributionUrl -replace '^.*/',''
+$distributionUrlNameMain = $distributionUrlName -replace '\.[^.]*$','' -replace '-bin$',''
+
+$MAVEN_M2_PATH = "$HOME/.m2"
+if ($env:MAVEN_USER_HOME) {
+  $MAVEN_M2_PATH = "$env:MAVEN_USER_HOME"
+}
+
+if (-not (Test-Path -Path $MAVEN_M2_PATH)) {
+    New-Item -Path $MAVEN_M2_PATH -ItemType Directory | Out-Null
+}
+
+$MAVEN_WRAPPER_DISTS = $null
+if ((Get-Item $MAVEN_M2_PATH).Target[0] -eq $null) {
+  $MAVEN_WRAPPER_DISTS = "$MAVEN_M2_PATH/wrapper/dists"
+} else {
+  $MAVEN_WRAPPER_DISTS = (Get-Item $MAVEN_M2_PATH).Target[0] + "/wrapper/dists"
+}
+
+$MAVEN_HOME_PARENT = "$MAVEN_WRAPPER_DISTS/$distributionUrlNameMain"
+$MAVEN_HOME_NAME = ([System.Security.Cryptography.SHA256]::Create().ComputeHash([byte[]][char[]]$distributionUrl) | ForEach-Object {$_.ToString("x2")}) -join ''
+$MAVEN_HOME = "$MAVEN_HOME_PARENT/$MAVEN_HOME_NAME"
+
+if (Test-Path -Path "$MAVEN_HOME" -PathType Container) {
+  Write-Verbose "found existing MAVEN_HOME at $MAVEN_HOME"
+  Write-Output "MVN_CMD=$MAVEN_HOME/bin/$MVN_CMD"
+  exit $?
+}
+
+if (! $distributionUrlNameMain -or ($distributionUrlName -eq $distributionUrlNameMain)) {
+  Write-Error "distributionUrl is not valid, must end with *-bin.zip, but found $distributionUrl"
+}
+
+# prepare tmp dir
+$TMP_DOWNLOAD_DIR_HOLDER = New-TemporaryFile
+$TMP_DOWNLOAD_DIR = New-Item -Itemtype Directory -Path "$TMP_DOWNLOAD_DIR_HOLDER.dir"
+$TMP_DOWNLOAD_DIR_HOLDER.Delete() | Out-Null
+trap {
+  if ($TMP_DOWNLOAD_DIR.Exists) {
+    try { Remove-Item $TMP_DOWNLOAD_DIR -Recurse -Force | Out-Null }
+    catch { Write-Warning "Cannot remove $TMP_DOWNLOAD_DIR" }
+  }
+}
+
+New-Item -Itemtype Directory -Path "$MAVEN_HOME_PARENT" -Force | Out-Null
+
+# Download and Install Apache Maven
+Write-Verbose "Couldn't find MAVEN_HOME, downloading and installing it ..."
+Write-Verbose "Downloading from: $distributionUrl"
+Write-Verbose "Downloading to: $TMP_DOWNLOAD_DIR/$distributionUrlName"
+
+$webclient = New-Object System.Net.WebClient
+if ($env:MVNW_USERNAME -and $env:MVNW_PASSWORD) {
+  $webclient.Credentials = New-Object System.Net.NetworkCredential($env:MVNW_USERNAME, $env:MVNW_PASSWORD)
+}
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+$webclient.DownloadFile($distributionUrl, "$TMP_DOWNLOAD_DIR/$distributionUrlName") | Out-Null
+
+# If specified, validate the SHA-256 sum of the Maven distribution zip file
+$distributionSha256Sum = (Get-Content -Raw "$scriptDir/.mvn/wrapper/maven-wrapper.properties" | ConvertFrom-StringData).distributionSha256Sum
+if ($distributionSha256Sum) {
+  if ($USE_MVND) {
+    Write-Error "Checksum validation is not supported for maven-mvnd. `nPlease disable validation by removing 'distributionSha256Sum' from your maven-wrapper.properties."
+  }
+  Import-Module $PSHOME\Modules\Microsoft.PowerShell.Utility -Function Get-FileHash
+  if ((Get-FileHash "$TMP_DOWNLOAD_DIR/$distributionUrlName" -Algorithm SHA256).Hash.ToLower() -ne $distributionSha256Sum) {
+    Write-Error "Error: Failed to validate Maven distribution SHA-256, your Maven distribution might be compromised. If you updated your Maven version, you need to update the specified distributionSha256Sum property."
+  }
+}
+
+# unzip and move
+Expand-Archive "$TMP_DOWNLOAD_DIR/$distributionUrlName" -DestinationPath "$TMP_DOWNLOAD_DIR" | Out-Null
+
+# Find the actual extracted directory name (handles snapshots where filename != directory name)
+$actualDistributionDir = ""
+
+# First try the expected directory name (for regular distributions)
+$expectedPath = Join-Path "$TMP_DOWNLOAD_DIR" "$distributionUrlNameMain"
+$expectedMvnPath = Join-Path "$expectedPath" "bin/$MVN_CMD"
+if ((Test-Path -Path $expectedPath -PathType Container) -and (Test-Path -Path $expectedMvnPath -PathType Leaf)) {
+  $actualDistributionDir = $distributionUrlNameMain
+}
+
+# If not found, search for any directory with the Maven executable (for snapshots)
+if (!$actualDistributionDir) {
+  Get-ChildItem -Path "$TMP_DOWNLOAD_DIR" -Directory | ForEach-Object {
+    $testPath = Join-Path $_.FullName "bin/$MVN_CMD"
+    if (Test-Path -Path $testPath -PathType Leaf) {
+      $actualDistributionDir = $_.Name
+    }
+  }
+}
+
+if (!$actualDistributionDir) {
+  Write-Error "Could not find Maven distribution directory in extracted archive"
+}
+
+Write-Verbose "Found extracted Maven distribution directory: $actualDistributionDir"
+Rename-Item -Path "$TMP_DOWNLOAD_DIR/$actualDistributionDir" -NewName $MAVEN_HOME_NAME | Out-Null
+try {
+  Move-Item -Path "$TMP_DOWNLOAD_DIR/$MAVEN_HOME_NAME" -Destination $MAVEN_HOME_PARENT | Out-Null
+} catch {
+  if (! (Test-Path -Path "$MAVEN_HOME" -PathType Container)) {
+    Write-Error "fail to move MAVEN_HOME"
+  }
+} finally {
+  try { Remove-Item $TMP_DOWNLOAD_DIR -Recurse -Force | Out-Null }
+  catch { Write-Warning "Cannot remove $TMP_DOWNLOAD_DIR" }
+}
+
+Write-Output "MVN_CMD=$MAVEN_HOME/bin/$MVN_CMD"
+</file>
+
+<file path="src/main/java/com/supertix/api/ApiApplication.java">
+package com.supertix.api;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ApiApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ApiApplication.class, args);
+	}
+
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/config/GlobalExceptionHandler.java">
+package com.supertix.api.config;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.server.ResponseStatusException;
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(ResponseStatusException.class)
+    public ResponseEntity<Map<String, String>> handleResponseStatus(ResponseStatusException e) {
+        Map<String, String> error = new HashMap<>();
+        error.put("message", e.getReason());
+        return ResponseEntity.status(e.getStatusCode()).body(error);
+    }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<Map<String, String>> handleValidation(MethodArgumentNotValidException e) {
+        Map<String, String> error = new HashMap<>();
+        e.getBindingResult().getFieldErrors()
+                .forEach(err -> error.put(err.getField(), err.getDefaultMessage()));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Map<String, String>> handleGeneral(Exception e) {
+        Map<String, String> error = new HashMap<>();
+        error.put("message", "Internal server error");
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
+    }
+
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<Map<String, String>> handleInvalidJson(HttpMessageNotReadableException e) {
+        Map<String, String> error = new HashMap<>();
+        error.put("message", "Invalid request body");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+    }
+
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity<Map<String, String>> handleDataIntegrity(
+            DataIntegrityViolationException e) {
+
+        Map<String, String> error = new HashMap<>();
+        error.put("message", "Duplicate or invalid data");
+
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(error);
+    }
+
+    @ExceptionHandler(AccessDeniedException.class)
+    public ResponseEntity<Map<String, String>> handleAccessDenied(
+            AccessDeniedException e) {
+
+        Map<String, String> error = new HashMap<>();
+        error.put("message", "Access denied");
+
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(error);
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/config/OpenApiConfig.java">
+package com.supertix.api.config;
+
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.enums.SecuritySchemeIn;
+import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
+import io.swagger.v3.oas.annotations.info.Info;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.security.SecurityScheme;
+
+@OpenAPIDefinition(info = @Info(title = "SuperTix API", version = "v1"), security = @SecurityRequirement(name = "bearerAuth"))
+@SecurityScheme(name = "bearerAuth", description = "JWT auth", scheme = "bearer", type = SecuritySchemeType.HTTP, bearerFormat = "JWT", in = SecuritySchemeIn.HEADER)
+public class OpenApiConfig {
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/config/RedisConfig.java">
+package com.supertix.api.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
+
+@Configuration
+public class RedisConfig {
+
+    @Bean
+    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory factor) {
+        RedisTemplate<String, Object> template = new RedisTemplate<>();
+        template.setConnectionFactory(factor);
+        template.setKeySerializer(new StringRedisSerializer());
+        template.setValueSerializer(new StringRedisSerializer());
+        return template;
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/controllers/AdminOrderController.java">
+package com.supertix.api.controllers;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.supertix.api.dtos.order.AdminOrderResponse;
+import com.supertix.api.service.OrderService;
+
+@RestController
+@RequestMapping("/admin/order")
+public class AdminOrderController {
+
+    private final OrderService orderService;
+
+    public AdminOrderController(OrderService orderService) {
+        this.orderService = orderService;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<AdminOrderResponse>> getAllOrders() {
+        return ResponseEntity.ok(orderService.getAllOrders());
+    }
+
+    @PatchMapping("/cancel/{id}")
+    public ResponseEntity<Map<String, String>> cancelOrder(@PathVariable Long id) {
+        return ResponseEntity.ok(orderService.adminCancelOrder(id));
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/controllers/AdminTicketController.java">
+package com.supertix.api.controllers;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.supertix.api.dtos.ticket.AdminTicketResponse;
+import com.supertix.api.service.TicketService;
+
+@RestController
+@RequestMapping("/admin/ticket")
+public class AdminTicketController {
+
+    private final TicketService ticketService;
+
+    public AdminTicketController(TicketService ticketService) {
+        this.ticketService = ticketService;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<AdminTicketResponse>> getAllTickets() {
+        return ResponseEntity.ok(ticketService.getAllTickets());
+    }
+
+    @PatchMapping("/scanned/{id}")
+    public ResponseEntity<Map<String, String>> scanTicket(@PathVariable Long id) {
+        return ResponseEntity.ok(ticketService.scanTicket(id));
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/controllers/AdminUserController.java">
+package com.supertix.api.controllers;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.supertix.api.dtos.user.UserResponse;
+import com.supertix.api.dtos.user.UserUpdateRequest;
+import com.supertix.api.service.UserService;
+
+import jakarta.validation.Valid;
+
+@RestController
+@RequestMapping("/admin")
+public class AdminUserController {
+
+    private final UserService userService;
+
+    public AdminUserController(UserService userService) {
+        this.userService = userService;
+    }
+
+    @GetMapping("/users")
+    public ResponseEntity<List<UserResponse>> getAllUser() {
+        return ResponseEntity.ok(userService.getAllUser());
+    }
+
+    @PutMapping("/users/{id}")
+    public ResponseEntity<Map<String, String>> updateUserByAdmin(@PathVariable Long id,
+            @Valid @RequestBody UserUpdateRequest dto) {
+        return ResponseEntity.ok(userService.updateUserByAdmin(id, dto));
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/controllers/NotificationController.java">
+package com.supertix.api.controllers;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.supertix.api.dtos.notification.NotificationResponse;
+import com.supertix.api.service.NotificationService;
+
+import jakarta.servlet.http.HttpServletRequest;
+
+@RestController
+@RequestMapping("/notification")
+public class NotificationController {
+
+    private final NotificationService notificationService;
+
+    public NotificationController(NotificationService notificationService) {
+        this.notificationService = notificationService;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<NotificationResponse>> getNotification(HttpServletRequest request) {
+        Long userId = (Long) request.getAttribute("userId");
+        return ResponseEntity.ok(notificationService.getNotification(userId));
+    }
+
+    @PatchMapping("/read/{id}")
+    public ResponseEntity<Map<String, String>> markAsReadById(HttpServletRequest request, @PathVariable Long id) {
+        Long userId = (Long) request.getAttribute("userId");
+        return ResponseEntity.ok(notificationService.markAsReadById(userId, id));
+    }
+
+    @PatchMapping("/read/all")
+    public ResponseEntity<Map<String, String>> markAsReadAll(HttpServletRequest request) {
+        Long userId = (Long) request.getAttribute("userId");
+        return ResponseEntity.ok(notificationService.markAsReadAll(userId));
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/controllers/OrderController.java">
+package com.supertix.api.controllers;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.supertix.api.dtos.order.OrderCreateRequest;
+import com.supertix.api.dtos.order.OrderResponse;
+import com.supertix.api.service.OrderService;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
+
+@RestController
+@RequestMapping("/order")
+public class OrderController {
+
+    private final OrderService orderService;
+
+    public OrderController(OrderService orderService) {
+        this.orderService = orderService;
+    }
+
+    @PostMapping("/create")
+    public ResponseEntity<Map<String, Object>> createOrder(HttpServletRequest request,
+            @Valid @RequestBody OrderCreateRequest dto) {
+        Long userId = (Long) request.getAttribute("userId");
+        return ResponseEntity.ok(orderService.createOrder(userId, dto));
+    }
+
+    @PutMapping("/payment/{id}")
+    public ResponseEntity<Map<String, String>> payOrder(HttpServletRequest request, @PathVariable Long id) {
+        Long userId = (Long) request.getAttribute("userId");
+        return ResponseEntity.ok(orderService.payOrder(userId, id));
+    }
+
+    @PatchMapping("/cancel/{id}")
+    public ResponseEntity<Map<String, String>> cancelOrder(HttpServletRequest request, @PathVariable Long id) {
+        Long userId = (Long) request.getAttribute("userId");
+        return ResponseEntity.ok(orderService.cancelOrder(userId, id));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<OrderResponse>> getMyOrders(HttpServletRequest request) {
+        Long userId = (Long) request.getAttribute("userId");
+        return ResponseEntity.ok(orderService.getOrdersById(userId));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<OrderResponse> getOrderById(HttpServletRequest request, @PathVariable Long id) {
+        Long userId = (Long) request.getAttribute("userId");
+        return ResponseEntity.ok(orderService.getOrderById(userId, id));
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/controllers/SeatController.java">
+package com.supertix.api.controllers;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.supertix.api.dtos.seat.SeatCreateRequest;
+import com.supertix.api.dtos.seat.SeatResponse;
+import com.supertix.api.dtos.seat.SeatUpdateRequest;
+import com.supertix.api.service.SeatService;
+
+import jakarta.validation.Valid;
+
+@RestController
+@RequestMapping("/seat")
+public class SeatController {
+
+    private final SeatService seatService;
+
+    public SeatController(SeatService seatService) {
+        this.seatService = seatService;
+    }
+
+    @PostMapping("/create")
+    public ResponseEntity<Map<String, String>> createSeats(@Valid @RequestBody SeatCreateRequest dto) {
+        return ResponseEntity.ok(seatService.createSeats(dto));
+    }
+
+    @GetMapping("/zone/{id}")
+    public ResponseEntity<List<SeatResponse>> getSeatsByZone(@PathVariable Long id) {
+        return ResponseEntity.ok(seatService.getSeatsByZone(id));
+    }
+
+    @GetMapping("/event/{id}")
+    public ResponseEntity<List<SeatResponse>> getSeatsByEvent(@PathVariable Long id) {
+        return ResponseEntity.ok(seatService.getSeatsByEvent(id));
+    }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Map<String, String>> updateSeat(@PathVariable Long id,
+            @Valid @RequestBody SeatUpdateRequest dto) {
+        return ResponseEntity.ok(seatService.updateSeat(id, dto));
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Map<String, String>> deleteSeat(@PathVariable Long id) {
+        return ResponseEntity.ok(seatService.deleteSeat(id));
+    }
+
+    @DeleteMapping("/zone/{id}")
+    public ResponseEntity<Map<String, String>> deleteSeatsByZone(@PathVariable Long id) {
+        return ResponseEntity.ok(seatService.deleteSeatsByZone(id));
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/controllers/TicketController.java">
+package com.supertix.api.controllers;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.supertix.api.dtos.ticket.TicketResponse;
+import com.supertix.api.service.TicketService;
+
+import jakarta.servlet.http.HttpServletRequest;
+
+@RestController
+@RequestMapping("/ticket")
+public class TicketController {
+
+    private final TicketService ticketService;
+
+    public TicketController(TicketService ticketService) {
+        this.ticketService = ticketService;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<TicketResponse>> getMyTickets(HttpServletRequest request) {
+        Long userId = (Long) request.getAttribute("userId");
+        return ResponseEntity.ok(ticketService.getMyTickets(userId));
+    }
+
+    @PatchMapping("/scanned/{id}")
+    public ResponseEntity<Map<String, String>> scanTicket(@PathVariable Long id) {
+        return ResponseEntity.ok(ticketService.scanTicket(id));
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/controllers/UserController.java">
+package com.supertix.api.controllers;
+
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.supertix.api.dtos.user.UserResponse;
+import com.supertix.api.dtos.user.UserUpdateInfoRequest;
+import com.supertix.api.dtos.user.UserUpdatePasswordRequest;
+import com.supertix.api.service.UserService;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
+
+@RestController
+@RequestMapping("/user")
+public class UserController {
+
+    private final UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
+    @GetMapping("/profile")
+    public ResponseEntity<UserResponse> getUserProfile(HttpServletRequest request) {
+        Long userId = (Long) request.getAttribute("userId");
+        return ResponseEntity.ok(userService.getUserProfile(userId));
+    }
+
+    @PutMapping("/profile")
+    public ResponseEntity<Map<String, String>> updateUser(
+            HttpServletRequest request,
+            @Valid @RequestBody UserUpdateInfoRequest dto) {
+        Long userId = (Long) request.getAttribute("userId");
+        return ResponseEntity.ok(userService.updateUser(userId, dto));
+    }
+
+    @PutMapping("/password")
+    public ResponseEntity<Map<String, String>> updatePassword(
+            HttpServletRequest request,
+            @Valid @RequestBody UserUpdatePasswordRequest dto) {
+        Long userId = (Long) request.getAttribute("userId");
+        return ResponseEntity.ok(userService.updatePassword(userId, dto));
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/controllers/VenueController.java">
+package com.supertix.api.controllers;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.supertix.api.dtos.venue.VenueCreateRequest;
+import com.supertix.api.dtos.venue.VenueResponse;
+import com.supertix.api.dtos.venue.VenueUpdateRequest;
+import com.supertix.api.service.VenueService;
+
+import jakarta.validation.Valid;
+
+@RestController
+@RequestMapping("/venue")
+public class VenueController {
+
+    private final VenueService venueService;
+
+    public VenueController(VenueService venueService) {
+        this.venueService = venueService;
+    }
+
+    @PostMapping("/create")
+    public ResponseEntity<Map<String, String>> createVenue(@Valid @RequestBody VenueCreateRequest dto) {
+        return ResponseEntity.ok(venueService.createVenue(dto));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<VenueResponse>> getAllVenues() {
+        return ResponseEntity.ok(venueService.getAllVenues());
+    }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Map<String, String>> updateVenueById(@PathVariable Long id,
+            @Valid @RequestBody VenueUpdateRequest dto) {
+        return ResponseEntity.ok(venueService.updateVenueById(id, dto));
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Map<String, String>> deleteVenue(@PathVariable Long id) {
+        return ResponseEntity.ok(venueService.deleteVunue(id));
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/controllers/ZoneController.java">
+package com.supertix.api.controllers;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.supertix.api.dtos.zone.ZoneCreateRequest;
+import com.supertix.api.dtos.zone.ZoneResponse;
+import com.supertix.api.dtos.zone.ZoneUpdateRequest;
+import com.supertix.api.service.ZoneService;
+
+import jakarta.validation.Valid;
+
+@RestController
+@RequestMapping("/zone")
+public class ZoneController {
+
+    private final ZoneService zoneService;
+
+    public ZoneController(ZoneService zoneService) {
+        this.zoneService = zoneService;
+    }
+
+    @PostMapping("/create")
+    public ResponseEntity<Map<String, String>> createZone(@Valid @RequestBody ZoneCreateRequest dto) {
+        return ResponseEntity.ok(zoneService.createZone(dto));
+    }
+
+    @GetMapping("/event/{id}")
+    public ResponseEntity<List<ZoneResponse>> getZonesByEvent(@PathVariable Long id) {
+        return ResponseEntity.ok(zoneService.getZonesByEvent(id));
+    }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Map<String, String>> updateZone(@PathVariable Long id,
+            @Valid @RequestBody ZoneUpdateRequest dto) {
+        return ResponseEntity.ok(zoneService.updateZone(id, dto));
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Map<String, String>> deleteZone(@PathVariable Long id) {
+        return ResponseEntity.ok(zoneService.deleteZone(id));
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/auth/SignInRequest.java">
+package com.supertix.api.dtos.auth;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class SignInRequest {
+
+    @NotBlank(message = "Email is required")
+    @Email(message = "Invalid email format")
+    private String email;
+
+    @NotBlank(message = "Password is required")
+    @Size(min = 8, message = "Password must be at least 8 characters")
+    private String password;
+
+    private boolean keepSignedIn;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/auth/SignUpRequest.java">
+package com.supertix.api.dtos.auth;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class SignUpRequest {
+
+    @NotBlank(message = "Email is required")
+    @Email(message = "Invalid email format")
+    private String email;
+
+    @NotBlank(message = "Name is required")
+    private String name;
+
+    @NotBlank(message = "Password is required")
+    @Size(min = 8, message = "Password must be at least 8 characters")
+    private String password;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/event/EventDetailResponse.java">
+package com.supertix.api.dtos.event;
+
+import com.supertix.api.enums.EventStatus;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+public class EventDetailResponse {
+
+    private Long id;
+    private Long venueId;
+    private String title;
+    private String description;
+    private String imageUrl;
+    private String venueName;
+    private String venueAddress;
+    private String startDate;
+    private String saleStartDate;
+    private String endDate;
+    private EventStatus status;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/notification/NotificationResponse.java">
+package com.supertix.api.dtos.notification;
+
+import java.time.LocalDateTime;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+public class NotificationResponse {
+
+    private Long id;
+    private String message;
+    private Boolean isRead;
+    private LocalDateTime createdAt;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/order/AdminOrderResponse.java">
+package com.supertix.api.dtos.order;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+public class AdminOrderResponse {
+
+    private Long id;
+    private Long userId;
+    private String userName;
+    private String userEmail;
+    private Long eventId;
+    private String eventTitle;
+    private String eventStartDate;
+    private BigDecimal totalAmount;
+    private String status;
+    private String expireAt;
+    private String createdAt;
+    private List<OrderItemResponse> items;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/order/OrderCreateRequest.java">
+package com.supertix.api.dtos.order;
+
+import java.util.List;
+
+import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class OrderCreateRequest {
+
+    @NotNull(message = "Event id is required")
+    private Long eventId;
+
+    @NotNull(message = "Seats id is required")
+    private List<Long> seatIds;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/order/OrderItemResponse.java">
+package com.supertix.api.dtos.order;
+
+import java.math.BigDecimal;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+public class OrderItemResponse {
+
+    private Long seatId;
+    private String seatLabel;
+    private String zoneName;
+    private BigDecimal price;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/order/OrderResponse.java">
+package com.supertix.api.dtos.order;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+public class OrderResponse {
+
+    private Long id;
+    private String eventTitle;
+    private String eventStartDate;
+    private BigDecimal totalAmount;
+    private String status;
+    private String expireAt;
+    private String createdAt;
+    private List<OrderItemResponse> items;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/seat/SeatCreateRequest.java">
+package com.supertix.api.dtos.seat;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class SeatCreateRequest {
+
+    @NotNull(message = "Zone id is required")
+    private Long zoneId;
+
+    @NotBlank(message = "Row label is required")
+    private String rowLabel;
+
+    @NotNull(message = "Total seats is required")
+    private Integer totalSeats;
+
+    /**
+     * Optional 0-based row index for this row within the zone grid.
+     * If null, rows are auto-indexed by alphabetical order at read time.
+     */
+    private Integer rowIndex;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/seat/SeatResponse.java">
+package com.supertix.api.dtos.seat;
+
+import java.math.BigDecimal;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class SeatResponse {
+
+    private Long id;
+    private Long zoneId;
+    private String zoneName;
+    private String zoneType;
+    private BigDecimal price;
+    private String rowLabel;
+    private Integer seatNumber;
+    private String status;
+
+    // Grid coordinates (may be null on legacy seats — frontend infers fallback)
+    private Integer rowIndex;
+    private Integer colIndex;
+    private Integer displayOrder;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/seat/SeatUpdateRequest.java">
+package com.supertix.api.dtos.seat;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class SeatUpdateRequest {
+
+    @NotBlank(message = "Row label is required")
+    private String rowLabel;
+
+    @NotNull(message = "Seat number is required")
+    private Integer seatNumber;
+
+    private Integer rowIndex;
+    private Integer colIndex;
+    private Integer displayOrder;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/ticket/AdminTicketResponse.java">
+package com.supertix.api.dtos.ticket;
+
+import java.math.BigDecimal;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+public class AdminTicketResponse {
+
+    private Long id;
+    private Long orderId;
+    private String orderStatus;
+    private Long userId;
+    private String userName;
+    private String userEmail;
+    private String eventTitle;
+    private String eventStartDate;
+    private String venueName;
+    private String zoneName;
+    private String zoneType;
+    private String seatLabel;
+    private BigDecimal price;
+    private String qrCode;
+    private Boolean isScanned;
+    private String createdAt;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/ticket/TicketResponse.java">
+package com.supertix.api.dtos.ticket;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+public class TicketResponse {
+
+    private Long id;
+    private String eventTitle;
+    private String eventStartDate;
+    private String venueName;
+    private String zoneName;
+    private String seatLabel;
+    private String qrCode;
+    private Boolean isScanned;
+    private String createdAt;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/user/UserResponse.java">
+package com.supertix.api.dtos.user;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+public class UserResponse {
+
+    private Long id;
+    private String email;
+    private String name;
+    private String phone;
+    private String address;
+    private String role;
+    private String status;
+    private String createdAt;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/user/UserUpdateInfoRequest.java">
+package com.supertix.api.dtos.user;
+
+import jakarta.validation.constraints.NotBlank;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class UserUpdateInfoRequest {
+
+    @NotBlank(message = "Email is required")
+    private String email;
+
+    @NotBlank(message = "Name is required")
+    private String name;
+
+    @NotBlank(message = "Phone number is required")
+    private String phone;
+
+    @NotBlank(message = "Address is required")
+    private String address;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/user/UserUpdatePasswordRequest.java">
+package com.supertix.api.dtos.user;
+
+import jakarta.validation.constraints.NotBlank;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class UserUpdatePasswordRequest {
+
+    @NotBlank(message = "Password is required")
+    private String password;
+
+    @NotBlank(message = "New password is required")
+    private String getNewPassword;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/user/UserUpdateRequest.java">
+package com.supertix.api.dtos.user;
+
+import com.supertix.api.enums.UserRole;
+import com.supertix.api.enums.UserStatus;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class UserUpdateRequest {
+
+    @NotBlank(message = "Email is required")
+    private String email;
+
+    @NotBlank(message = "Name is required")
+    private String name;
+
+    private String phone;
+    private String address;
+
+    @NotNull(message = "Role is required")
+    private UserRole role;
+
+    @NotNull(message = "Status is required")
+    private UserStatus status;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/zone/ZoneCreateRequest.java">
+package com.supertix.api.dtos.zone;
+
+import java.math.BigDecimal;
+
+import com.supertix.api.enums.StageDirection;
+import com.supertix.api.enums.ZoneShape;
+import com.supertix.api.enums.ZoneType;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+/**
+ * Create-zone payload. All layout fields are optional so the basic admin form
+ * still works; a future drag-and-drop layout editor will supply the full set.
+ */
+@Getter
+@Setter
+@NoArgsConstructor
+public class ZoneCreateRequest {
+
+    @NotNull(message = "Event id is required")
+    private Long eventId;
+
+    @NotBlank(message = "Name is required")
+    private String name;
+
+    @NotNull(message = "Price id is required")
+    private BigDecimal price;
+
+    @NotNull(message = "Type id is required")
+    private ZoneType type;
+
+    @NotNull(message = "capacity id is required")
+    private Integer capacity;
+
+    // === Layout (all optional) ===
+    private Integer layoutX;
+    private Integer layoutY;
+    private Integer layoutWidth;
+    private Integer layoutHeight;
+    private Integer rowCount;
+    private Integer colCount;
+    private StageDirection stageDirection;
+    private Integer displayOrder;
+
+    private Integer rotationDeg;
+    private Integer zIndex;
+    private ZoneShape shape;
+    private String polygonPoints;
+    private String fillColor;
+    private String borderColor;
+    private Integer labelOffsetX;
+    private Integer labelOffsetY;
+
+    /** Front/back adjacency — id of the zone directly in front of this one (closer to stage). */
+    private Long parentZoneId;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/zone/ZoneResponse.java">
+package com.supertix.api.dtos.zone;
+
+import java.math.BigDecimal;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class ZoneResponse {
+
+    private Long id;
+    private Long eventId;
+    private String name;
+    private BigDecimal price;
+    private String type;
+    private String status;
+    private Integer capacity;
+
+    // Layout metadata exposed to the frontend (may be null on legacy zones)
+    private Integer layoutX;
+    private Integer layoutY;
+    private Integer layoutWidth;
+    private Integer layoutHeight;
+    private Integer rowCount;
+    private Integer colCount;
+    private String stageDirection;
+    private Integer displayOrder;
+
+    private Integer rotationDeg;
+    private Integer zIndex;
+    private String shape;
+    private String polygonPoints;
+    private String fillColor;
+    private String borderColor;
+    private Integer labelOffsetX;
+    private Integer labelOffsetY;
+
+    private Long parentZoneId;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/zone/ZoneUpdateRequest.java">
+package com.supertix.api.dtos.zone;
+
+import java.math.BigDecimal;
+
+import com.supertix.api.enums.StageDirection;
+import com.supertix.api.enums.ZoneShape;
+import com.supertix.api.enums.ZoneStatus;
+import com.supertix.api.enums.ZoneType;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class ZoneUpdateRequest {
+
+    @NotBlank(message = "Name id is required")
+    private String name;
+
+    @NotNull(message = "Price id is required")
+    private BigDecimal price;
+
+    @NotNull(message = "Type id is required")
+    private ZoneType type;
+
+    @NotNull(message = "Capacity id is required")
+    private Integer capacity;
+
+    @NotNull(message = "Status id is required")
+    private ZoneStatus status;
+
+    // === Layout (optional — partial updates supported) ===
+    private Integer layoutX;
+    private Integer layoutY;
+    private Integer layoutWidth;
+    private Integer layoutHeight;
+    private Integer rowCount;
+    private Integer colCount;
+    private StageDirection stageDirection;
+    private Integer displayOrder;
+
+    private Integer rotationDeg;
+    private Integer zIndex;
+    private ZoneShape shape;
+    private String polygonPoints;
+    private String fillColor;
+    private String borderColor;
+    private Integer labelOffsetX;
+    private Integer labelOffsetY;
+
+    private Long parentZoneId;
+
+    /**
+     * If true and parentZoneId is null, explicitly clear the existing parent.
+     * Lets a drag-and-drop editor "detach" a zone from its predecessor.
+     */
+    private Boolean clearParentZone;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/enums/EventStatus.java">
+package com.supertix.api.enums;
+
+public enum EventStatus {
+    UPCOMING,
+    ON_SALE,
+    SOLD_OUT,
+    CANCELLED,
+    COMPLETED
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/enums/OrderStatus.java">
+package com.supertix.api.enums;
+
+public enum OrderStatus {
+    PENDING,
+    PAID,
+    CANCELLED,
+    EXPIRED
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/enums/UserRole.java">
+package com.supertix.api.enums;
+
+public enum UserRole {
+    USER,
+    ADMIN
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/enums/UserStatus.java">
+package com.supertix.api.enums;
+
+public enum UserStatus {
+    ACTIVE,
+    INACTIVE
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/enums/VenueStatus.java">
+package com.supertix.api.enums;
+
+public enum VenueStatus {
+    ACTIVE,
+    INACTIVE
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/enums/ZoneStatus.java">
+package com.supertix.api.enums;
+
+public enum ZoneStatus {
+    AVAILABLE,
+    SOLD_OUT,
+    CANCELLED
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/enums/ZoneType.java">
+package com.supertix.api.enums;
+
+public enum ZoneType {
+    VIP,
+    PREMIUM,
+    STANDARD,
+    ECONOMY
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/filter/JwtFilter.java">
+package com.supertix.api.filter;
+
+import java.io.IOException;
+import java.util.List;
+
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Component;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import com.supertix.api.service.JwtService;
+
+import io.jsonwebtoken.Claims;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.constraints.NotNull;
+
+@Component
+public class JwtFilter extends OncePerRequestFilter {
+
+    private final JwtService jwtService;
+
+    public JwtFilter(JwtService jwtService) {
+        this.jwtService = jwtService;
+    }
+
+    @Override
+    protected void doFilterInternal(
+            @NotNull HttpServletRequest request,
+            @NotNull HttpServletResponse response,
+            @NotNull FilterChain chain) throws ServletException, IOException {
+
+        String authHeader = request.getHeader("Authorization");
+
+        if (authHeader != null && authHeader.startsWith("Bearer ")) {
+            String token = authHeader.substring(7);
+
+            try {
+                if (jwtService.isTokenValid(token)) {
+                    Long userId = jwtService.extractUserId(token);
+
+                    Claims claims = jwtService.extractClaims(token);
+                    String role = claims.get("role", String.class);
+
+                    List<SimpleGrantedAuthority> authorities = role != null
+                            ? List.of(new SimpleGrantedAuthority(role))
+                            : List.of();
+
+                    request.setAttribute("userId", userId);
+
+                    UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userId,
+                            null, authorities);
+
+                    SecurityContextHolder.getContext().setAuthentication(authentication);
+                }
+            } catch (Exception ex) {
+                SecurityContextHolder.clearContext();
+            }
+        }
+        chain.doFilter(request, response);
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/models/NotificationModel.java">
+package com.supertix.api.models;
+
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "notifications")
+@Getter
+@Setter
+@NoArgsConstructor
+public class NotificationModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private UserModel user;
+
+    @Column(nullable = false)
+    private String message;
+
+    private Boolean isRead = false;
+
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
+
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now().withNano(0);
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/models/OrderItemModel.java">
+package com.supertix.api.models;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "order_items")
+@Getter
+@Setter
+@NoArgsConstructor
+public class OrderItemModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id", nullable = false)
+    private OrderModel order;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "seat_id", nullable = false)
+    private SeatModel seat;
+
+    @Column(nullable = false)
+    private BigDecimal price;
+
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
+
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now().withNano(0);
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/models/OrderModel.java">
+package com.supertix.api.models;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+import com.supertix.api.enums.OrderStatus;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "orders")
+@Getter
+@Setter
+@NoArgsConstructor
+public class OrderModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private UserModel user;
+
+    @ManyToOne
+    @JoinColumn(name = "event_id", nullable = false)
+    private EventModel event;
+
+    @Column(nullable = false)
+    private BigDecimal totalAmount;
+
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status = OrderStatus.PENDING;
+
+    private LocalDateTime expireAt;
+
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
+
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now().withNano(0);
+        expireAt = LocalDateTime.now().plusMinutes(10).withNano(0);
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/models/SeatModel.java">
+package com.supertix.api.models;
+
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "seats", uniqueConstraints = {
+        @UniqueConstraint(name = "uk_seat_zone_row_number", columnNames = { "zone_id", "row_label", "seat_number" })
+})
+@Getter
+@Setter
+@NoArgsConstructor
+public class SeatModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "zone_id", nullable = false)
+    private ZoneModel zone;
+
+    @Column(name = "row_label", nullable = false)
+    private String rowLabel;
+
+    @Column(name = "seat_number", nullable = false)
+    private Integer seatNumber;
+
+    // === Grid coordinates inside the zone ===
+    // 0-based indices used by SeatGrid to position seats spatially
+    // instead of relying on insertion / DB order.
+    @Column(name = "row_index")
+    private Integer rowIndex;
+
+    @Column(name = "col_index")
+    private Integer colIndex;
+
+    /** Optional explicit ordering hint within a row. */
+    @Column(name = "display_order")
+    private Integer displayOrder;
+
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
+
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now().withNano(0);
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/models/TicketModel.java">
+package com.supertix.api.models;
+
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "tickets")
+@Getter
+@Setter
+@NoArgsConstructor
+public class TicketModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id", nullable = false)
+    private OrderModel order;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "seat_id", nullable = false)
+    private SeatModel seat;
+
+    @Column(nullable = false)
+    private String qrCode;
+
+    private Boolean isScanned = false;
+
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
+
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now().withNano(0);
+        qrCode = "TIX-" + System.currentTimeMillis();
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/models/UserModel.java">
+package com.supertix.api.models;
+
+import java.time.LocalDateTime;
+
+import com.supertix.api.enums.UserRole;
+import com.supertix.api.enums.UserStatus;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "users")
+@Getter
+@Setter
+@NoArgsConstructor
+public class UserModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false, unique = true)
+    private String email;
+
+    @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = false)
+    private String password;
+
+    private String phone;
+    private String address;
+
+    @Enumerated(EnumType.STRING)
+    private UserRole role = UserRole.USER;
+
+    @Enumerated(EnumType.STRING)
+    private UserStatus status = UserStatus.ACTIVE;
+
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
+
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now().withNano(0);
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/models/ZoneModel.java">
+package com.supertix.api.models;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+import com.supertix.api.enums.StageDirection;
+import com.supertix.api.enums.ZoneShape;
+import com.supertix.api.enums.ZoneStatus;
+import com.supertix.api.enums.ZoneType;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "zones")
+@Getter
+@Setter
+@NoArgsConstructor
+public class ZoneModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "event_id", nullable = false)
+    private EventModel event;
+
+    @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = false)
+    private BigDecimal price;
+
+    @Column(nullable = false)
+    private Integer capacity;
+
+    @Enumerated(EnumType.STRING)
+    private ZoneType type;
+
+    @Enumerated(EnumType.STRING)
+    private ZoneStatus status = ZoneStatus.AVAILABLE;
+
+    // === Layout metadata for the venue zone map ===
+    // Coordinates are in the venue's logical pixel space (see VenueModel.layoutWidth/Height).
+    @Column(name = "layout_x")
+    private Integer layoutX;
+
+    @Column(name = "layout_y")
+    private Integer layoutY;
+
+    @Column(name = "layout_width")
+    private Integer layoutWidth;
+
+    @Column(name = "layout_height")
+    private Integer layoutHeight;
+
+    // === Seat grid layout inside the zone ===
+    @Column(name = "row_count")
+    private Integer rowCount;
+
+    @Column(name = "col_count")
+    private Integer colCount;
+
+    /**
+     * Where the stage is, *as seen from inside this zone*.
+     * Drives how SeatGrid flips/rotates and where it draws the STAGE label.
+     * NORTH = stage in front, SOUTH = behind, EAST = right side, WEST = left side.
+     */
+    @Enumerated(EnumType.STRING)
+    @Column(name = "stage_direction")
+    private StageDirection stageDirection = StageDirection.NORTH;
+
+    /** Lower numbers render first (closer to stage in lists). */
+    @Column(name = "display_order")
+    private Integer displayOrder = 0;
+
+    /**
+     * Rotation in degrees applied to the zone's bounding box on the venue map.
+     * 0 = axis-aligned. Useful for diagonal balconies, fan-shaped sections, etc.
+     */
+    @Column(name = "rotation_deg")
+    private Integer rotationDeg = 0;
+
+    /** Z-index for stacking — higher numbers render on top. */
+    @Column(name = "z_index")
+    private Integer zIndex = 0;
+
+    /** Geometric shape used to render this zone on the venue map. */
+    @Enumerated(EnumType.STRING)
+    @Column(name = "shape")
+    private ZoneShape shape = ZoneShape.RECT;
+
+    /**
+     * For shape=POLYGON: JSON array of [x, y] points in venue-canvas coordinates,
+     * e.g. "[[100,50],[300,50],[400,200],[80,180]]".
+     * Ignored for other shapes.
+     */
+    @Column(name = "polygon_points", length = 4000)
+    private String polygonPoints;
+
+    /** Optional override for the zone fill color (else derived from ZoneType). */
+    @Column(name = "fill_color", length = 16)
+    private String fillColor;
+
+    /** Optional override for the zone border color (else derived from ZoneType). */
+    @Column(name = "border_color", length = 16)
+    private String borderColor;
+
+    /** Pixel offset for the zone label relative to the zone center. */
+    @Column(name = "label_offset_x")
+    private Integer labelOffsetX = 0;
+
+    @Column(name = "label_offset_y")
+    private Integer labelOffsetY = 0;
+
+    /**
+     * Adjacency / front-back relationship.
+     * `parentZone` is the zone DIRECTLY in front of this one (closer to the stage).
+     * Used to render "X section" hints between the stage and this zone's seat
+     * view, and to model arbitrary chains like Balcony → Mezzanine → Orchestra.
+     *
+     * Self-referencing FK; ON DELETE SET NULL is enforced at the application
+     * layer (see ZoneService.deleteZone).
+     */
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "parent_zone_id")
+    private ZoneModel parentZone;
+
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
+
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now().withNano(0);
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/repositories/EventRepository.java">
+package com.supertix.api.repositories;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.supertix.api.enums.EventStatus;
+import com.supertix.api.models.EventModel;
+
+public interface EventRepository extends JpaRepository<EventModel, Long> {
+    List<EventModel> findByVenueId(Long venueId);
+
+    List<EventModel> findByStatus(EventStatus status);
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/repositories/NotificationRepository.java">
+package com.supertix.api.repositories;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.supertix.api.models.NotificationModel;
+
+public interface NotificationRepository extends JpaRepository<NotificationModel, Long> {
+    List<NotificationModel> findByUserId(Long userId);
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/repositories/OrderItemRepository.java">
+package com.supertix.api.repositories;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.supertix.api.models.OrderItemModel;
+
+public interface OrderItemRepository extends JpaRepository<OrderItemModel, Long> {
+    List<OrderItemModel> findByOrderId(Long orderId);
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/repositories/OrderRepository.java">
+package com.supertix.api.repositories;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.supertix.api.enums.OrderStatus;
+import com.supertix.api.models.OrderModel;
+
+public interface OrderRepository extends JpaRepository<OrderModel, Long> {
+    List<OrderModel> findByUserId(Long userId);
+
+    List<OrderModel> findByStatusAndExpireAtBefore(OrderStatus status, LocalDateTime time);
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/repositories/SeatRepository.java">
+package com.supertix.api.repositories;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.supertix.api.models.SeatModel;
+
+public interface SeatRepository extends JpaRepository<SeatModel, Long> {
+    List<SeatModel> findByZoneId(Long zoneId);
+
+    List<SeatModel> findByZoneEventId(Long eventId);
+
+    long countByZoneId(Long zoneId);
+
+    boolean existsByZoneIdAndRowLabelAndSeatNumber(Long zoneId, String rowLabel, Integer seatNumber);
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/repositories/TicketRepository.java">
+package com.supertix.api.repositories;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.supertix.api.models.TicketModel;
+
+public interface TicketRepository extends JpaRepository<TicketModel, Long> {
+    List<TicketModel> findByOrderId(Long orderId);
+
+    Optional<TicketModel> findByQrCode(String qrCode);
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/repositories/UserRepository.java">
+package com.supertix.api.repositories;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.supertix.api.models.UserModel;
+
+public interface UserRepository extends JpaRepository<UserModel, Long> {
+    boolean existsByEmail(String email);
+
+    Optional<UserModel> findByEmail(String email);
+
+    List<UserModel> findAllByOrderByIdAsc();
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/repositories/VenueRepository.java">
+package com.supertix.api.repositories;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.supertix.api.models.VenueModel;
+
+public interface VenueRepository extends JpaRepository<VenueModel, Long> {
+    boolean existsByName(String name);
+
+    List<VenueModel> findAllByOrderByIdAsc();
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/repositories/ZoneRepository.java">
+package com.supertix.api.repositories;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.supertix.api.models.ZoneModel;
+
+public interface ZoneRepository extends JpaRepository<ZoneModel, Long> {
+    List<ZoneModel> findByEventId(Long eventId);
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/service/JwtService.java">
+package com.supertix.api.service;
+
+import java.nio.charset.StandardCharsets;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.crypto.SecretKey;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import com.supertix.api.models.UserModel;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.security.Keys;
+
+@Service
+public class JwtService {
+
+    @Value("${jwt.secret}")
+    private String secretKey;
+
+    private SecretKey getSignInKey() {
+        byte[] keyBytes = secretKey.getBytes(StandardCharsets.UTF_8);
+        return Keys.hmacShaKeyFor(keyBytes);
+    }
+
+    public String generateToken(UserModel user, boolean keepSignedIn) {
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("id", user.getId());
+        claims.put("role", user.getRole());
+        claims.put("name", user.getName());
+
+        Long expiration = keepSignedIn
+                ? 1000L * 60 * 60 * 24 * 30
+                : 1000L * 60 * 60 * 24;
+
+        return Jwts.builder()
+                .claims(claims)
+                .subject(user.getEmail())
+                .issuedAt(new Date(System.currentTimeMillis()))
+                .expiration(new Date(System.currentTimeMillis() + expiration))
+                .signWith(getSignInKey())
+                .compact();
+    }
+
+    public Claims extractClaims(String token) {
+        return Jwts.parser()
+                .verifyWith(getSignInKey())
+                .build()
+                .parseSignedClaims(token)
+                .getPayload();
+    }
+
+    public Long extractUserId(String token) {
+        Integer id = extractClaims(token).get("id", Integer.class);
+        return id.longValue();
+    }
+
+    public boolean isTokenValid(String token) {
+        return extractClaims(token).getExpiration().after(new Date());
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/service/NotificationService.java">
+package com.supertix.api.service;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import com.supertix.api.dtos.notification.NotificationResponse;
+import com.supertix.api.models.NotificationModel;
+import com.supertix.api.repositories.NotificationRepository;
+
+@Service
+public class NotificationService {
+
+    private final NotificationRepository notificationRepository;
+
+    public NotificationService(NotificationRepository notificationRepository) {
+        this.notificationRepository = notificationRepository;
+    }
+
+    public List<NotificationResponse> getNotification(Long userId) {
+        return notificationRepository.findByUserId(userId).stream()
+                .map(n -> new NotificationResponse(
+                        n.getId(),
+                        n.getMessage(),
+                        n.getIsRead(),
+                        n.getCreatedAt()))
+                .toList();
+    }
+
+    public Map<String, String> markAsReadById(Long userId, Long notificationId) {
+        NotificationModel notification = notificationRepository.findById(notificationId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Notification not found"));
+
+        if (!notification.getUser().getId().equals(userId)) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "This message does not belong to you");
+        }
+
+        notification.setIsRead(true);
+        notificationRepository.save(notification);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Read successful");
+        return response;
+    }
+
+    public Map<String, String> markAsReadAll(Long userId) {
+        List<NotificationModel> notification = notificationRepository.findByUserId(userId);
+
+        notification.forEach(n -> n.setIsRead(true));
+        notificationRepository.saveAll(notification);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "All notification marked as read");
+        return response;
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/service/OrderService.java">
+package com.supertix.api.service;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import com.supertix.api.dtos.order.AdminOrderResponse;
+import com.supertix.api.dtos.order.OrderCreateRequest;
+import com.supertix.api.dtos.order.OrderItemResponse;
+import com.supertix.api.dtos.order.OrderResponse;
+import com.supertix.api.enums.EventStatus;
+import com.supertix.api.enums.OrderStatus;
+import com.supertix.api.models.EventModel;
+import com.supertix.api.models.NotificationModel;
+import com.supertix.api.models.OrderItemModel;
+import com.supertix.api.models.OrderModel;
+import com.supertix.api.models.SeatModel;
+import com.supertix.api.models.TicketModel;
+import com.supertix.api.models.UserModel;
+import com.supertix.api.repositories.EventRepository;
+import com.supertix.api.repositories.NotificationRepository;
+import com.supertix.api.repositories.OrderItemRepository;
+import com.supertix.api.repositories.OrderRepository;
+import com.supertix.api.repositories.SeatRepository;
+import com.supertix.api.repositories.TicketRepository;
+import com.supertix.api.repositories.UserRepository;
+
+import jakarta.transaction.Transactional;
+
+@Service
+public class OrderService {
+
+    private final OrderRepository orderRepository;
+    private final UserRepository userRepository;
+    private final EventRepository eventRepository;
+    private final SeatRepository seatRepository;
+    private final OrderItemRepository orderItemRepository;
+    private final TicketRepository ticketRepository;
+    private final NotificationRepository notificationRepository;
+    private final RedisTemplate redisTemplate;
+
+    public OrderService(OrderRepository orderRepository, UserRepository userRepository, EventRepository eventRepository,
+            SeatRepository seatRepository, OrderItemRepository orderItemRepository, TicketRepository ticketRepository,
+            NotificationRepository notificationRepository, RedisTemplate redisTemplate) {
+        this.orderRepository = orderRepository;
+        this.userRepository = userRepository;
+        this.eventRepository = eventRepository;
+        this.seatRepository = seatRepository;
+        this.orderItemRepository = orderItemRepository;
+        this.ticketRepository = ticketRepository;
+        this.notificationRepository = notificationRepository;
+        this.redisTemplate = redisTemplate;
+    }
+
+    @Transactional
+    public Map<String, Object> createOrder(Long userId, OrderCreateRequest dto) {
+
+        UserModel user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "User not found"));
+
+        EventModel event = eventRepository.findById(dto.getEventId())
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Event not found"));
+
+        if (event.getStatus() != EventStatus.ON_SALE) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Event is not on sale");
+        }
+
+        List<SeatModel> seats = seatRepository.findAllById(dto.getSeatIds());
+        if (seats.size() != dto.getSeatIds().size()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Some seats not found");
+        }
+
+        for (SeatModel seat : seats) {
+            String lockKey = "seat:lock:" + seat.getId();
+            String bookedKey = "seat:booked:" + seat.getId();
+
+            if (redisTemplate.opsForValue().get(lockKey) != null) {
+                throw new ResponseStatusException(HttpStatus.CONFLICT,
+                        "Seat " + seat.getRowLabel() + seat.getSeatNumber() + " is already locked");
+            }
+            if (redisTemplate.opsForValue().get(bookedKey) != null) {
+                throw new ResponseStatusException(HttpStatus.CONFLICT,
+                        "Seat " + seat.getRowLabel() + seat.getSeatNumber() + " is already booked");
+            }
+        }
+
+        for (SeatModel seat : seats) {
+            redisTemplate.opsForValue().set(
+                    "seat:lock:" + seat.getId(),
+                    userId.toString(),
+                    10, TimeUnit.MINUTES);
+        }
+
+        BigDecimal totalAmount = seats.stream().map(seat -> seat.getZone().getPrice()).reduce(BigDecimal.ZERO,
+                BigDecimal::add);
+
+        OrderModel order = new OrderModel();
+        order.setUser(user);
+        order.setEvent(event);
+        order.setTotalAmount(totalAmount);
+        orderRepository.save(order);
+
+        List<OrderItemModel> items = seats.stream().map(seat -> {
+            OrderItemModel item = new OrderItemModel();
+            item.setOrder(order);
+            item.setSeat(seat);
+            item.setPrice(seat.getZone().getPrice());
+            return item;
+        }).toList();
+        orderItemRepository.saveAll(items);
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("orderId", order.getId());
+        response.put("totalAmount", totalAmount);
+        response.put("expireAt", order.getExpireAt());
+        response.put("message", "Order created successfully, please pay within 10 minutes");
+        return response;
+    }
+
+    @Transactional
+    public Map<String, String> payOrder(Long userId, Long orderId) {
+
+        OrderModel order = orderRepository.findById(orderId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Order not found"));
+
+        if (!order.getUser().getId().equals(userId)) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "This order does not belong to you");
+        }
+
+        if (order.getStatus() != OrderStatus.PENDING) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Order is not pending");
+        }
+
+        if (LocalDateTime.now().isAfter(order.getExpireAt())) {
+            order.setStatus(OrderStatus.EXPIRED);
+            orderRepository.save(order);
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Order has expired");
+        }
+
+        order.setStatus(OrderStatus.PAID);
+        orderRepository.save(order);
+
+        List<OrderItemModel> items = orderItemRepository.findByOrderId(orderId);
+
+        List<TicketModel> tickets = items.stream().map(item -> {
+            TicketModel ticket = new TicketModel();
+            ticket.setOrder(order);
+            ticket.setSeat(item.getSeat());
+
+            redisTemplate.delete("seat:lock:" + item.getSeat().getId());
+
+            redisTemplate.opsForValue().set(
+                    "seat:booked:" + item.getSeat().getId(),
+                    userId.toString());
+
+            return ticket;
+        }).toList();
+
+        ticketRepository.saveAll(tickets);
+
+        NotificationModel notification = new NotificationModel();
+        notification.setUser(order.getUser());
+        notification.setMessage(
+                "Payment successful! You have " + items.size() + " ticket(s) for " + order.getEvent().getTitle());
+        notificationRepository.save(notification);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Payment successful");
+        return response;
+    }
+
+    @Transactional
+    public Map<String, String> cancelOrder(Long userId, Long orderId) {
+        OrderModel order = orderRepository.findById(orderId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Order not found"));
+
+        if (!order.getUser().getId().equals(userId)) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "This order does not belong to you");
+        }
+
+        if (order.getStatus() != OrderStatus.PENDING) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                    "Cannot cancel order with status: " + order.getStatus().name());
+        }
+
+        order.setStatus(OrderStatus.CANCELLED);
+        orderRepository.save(order);
+
+        List<OrderItemModel> items = orderItemRepository.findByOrderId(orderId);
+        items.forEach(item -> redisTemplate.delete("seat:lock:" + item.getSeat().getId()));
+
+        NotificationModel notification = new NotificationModel();
+        notification.setUser(order.getUser());
+        notification.setMessage("Your order for " + order.getEvent().getTitle() + " has been cancelled");
+        notificationRepository.save(notification);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Order cancelled successfully");
+        return response;
+    }
+
+    @Transactional
+    public OrderResponse getOrderById(Long userId, Long orderId) {
+        OrderModel order = orderRepository.findById(orderId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Order not found"));
+
+        if (!order.getUser().getId().equals(userId)) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "This order does not belong to you");
+        }
+
+        List<OrderItemModel> items = orderItemRepository.findByOrderId(order.getId());
+        List<OrderItemResponse> itemResponse = items.stream()
+                .map(item -> new OrderItemResponse(
+                        item.getSeat().getId(),
+                        item.getSeat().getRowLabel() + item.getSeat().getSeatNumber(),
+                        item.getSeat().getZone().getName(),
+                        item.getPrice()))
+                .toList();
+
+        return new OrderResponse(
+                order.getId(),
+                order.getEvent().getTitle(),
+                order.getEvent().getStartDate().toString(),
+                order.getTotalAmount(),
+                order.getStatus().name(),
+                order.getExpireAt() != null ? order.getExpireAt().toString() : null,
+                order.getCreatedAt().toString(),
+                itemResponse);
+    }
+
+    @Transactional
+    public List<OrderResponse> getOrdersById(Long userId) {
+        List<OrderModel> orders = orderRepository.findByUserId(userId);
+
+        return orders.stream().map(order -> {
+            List<OrderItemModel> items = orderItemRepository.findByOrderId(order.getId());
+
+            List<OrderItemResponse> itemResponse = items.stream()
+                    .map(item -> new OrderItemResponse(
+                            item.getSeat().getId(),
+                            item.getSeat().getRowLabel() + item.getSeat().getSeatNumber(),
+                            item.getSeat().getZone().getName(),
+                            item.getPrice()))
+                    .toList();
+
+            return new OrderResponse(
+                    order.getId(),
+                    order.getEvent().getTitle(),
+                    order.getEvent().getStartDate().toString(),
+                    order.getTotalAmount(),
+                    order.getStatus().name(),
+                    order.getExpireAt() != null ? order.getExpireAt().toString() : null,
+                    order.getCreatedAt().toString(), itemResponse);
+        }).toList();
+    }
+
+    @Transactional
+    public List<AdminOrderResponse> getAllOrders() {
+        return orderRepository.findAll().stream().map(order -> {
+            List<OrderItemModel> items = orderItemRepository.findByOrderId(order.getId());
+            List<OrderItemResponse> itemResponse = items.stream()
+                    .map(item -> new OrderItemResponse(
+                            item.getSeat().getId(),
+                            item.getSeat().getRowLabel() + item.getSeat().getSeatNumber(),
+                            item.getSeat().getZone().getName(),
+                            item.getPrice()))
+                    .toList();
+            return new AdminOrderResponse(
+                    order.getId(),
+                    order.getUser().getId(),
+                    order.getUser().getName(),
+                    order.getUser().getEmail(),
+                    order.getEvent().getId(),
+                    order.getEvent().getTitle(),
+                    order.getEvent().getStartDate().toString(),
+                    order.getTotalAmount(),
+                    order.getStatus().name(),
+                    order.getExpireAt() != null ? order.getExpireAt().toString() : null,
+                    order.getCreatedAt().toString(),
+                    itemResponse);
+        }).toList();
+    }
+
+    @Transactional
+    public Map<String, String> adminCancelOrder(Long orderId) {
+        OrderModel order = orderRepository.findById(orderId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Order not found"));
+
+        if (order.getStatus() == OrderStatus.CANCELLED) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Order already cancelled");
+        }
+
+        order.setStatus(OrderStatus.CANCELLED);
+        orderRepository.save(order);
+
+        List<OrderItemModel> items = orderItemRepository.findByOrderId(orderId);
+        for (OrderItemModel item : items) {
+            try {
+                redisTemplate.delete("seat:lock:" + item.getSeat().getId());
+                redisTemplate.delete("seat:booked:" + item.getSeat().getId());
+            } catch (Exception ignored) {
+                // Redis down — DB cancellation already saved
+            }
+        }
+
+        NotificationModel notification = new NotificationModel();
+        notification.setUser(order.getUser());
+        notification.setMessage("Your order for " + order.getEvent().getTitle() + " was cancelled by admin");
+        notificationRepository.save(notification);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Order cancelled by admin");
+        return response;
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/service/SeatService.java">
+package com.supertix.api.service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import com.supertix.api.dtos.seat.SeatCreateRequest;
+import com.supertix.api.dtos.seat.SeatResponse;
+import com.supertix.api.dtos.seat.SeatUpdateRequest;
+import com.supertix.api.models.SeatModel;
+import com.supertix.api.models.ZoneModel;
+import com.supertix.api.repositories.SeatRepository;
+import com.supertix.api.repositories.ZoneRepository;
+
+import jakarta.transaction.Transactional;
+
+@Service
+public class SeatService {
+
+    private final SeatRepository seatRepository;
+    private final ZoneRepository zoneRepository;
+    private final RedisTemplate<String, Object> redisTemplate;
+
+    public SeatService(SeatRepository seatRepository, ZoneRepository zoneRepository,
+            RedisTemplate<String, Object> redisTemplate) {
+        this.seatRepository = seatRepository;
+        this.zoneRepository = zoneRepository;
+        this.redisTemplate = redisTemplate;
+    }
+
+    @Transactional
+    public Map<String, String> createSeats(SeatCreateRequest dto) {
+        ZoneModel zone = zoneRepository.findById(dto.getZoneId())
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Zone not found"));
+
+        if (dto.getTotalSeats() == null || dto.getTotalSeats() <= 0) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Total seats must be greater than 0");
+        }
+
+        long existingCount = seatRepository.countByZoneId(zone.getId());
+        if (existingCount + dto.getTotalSeats() > zone.getCapacity()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                    "Total seats (" + (existingCount + dto.getTotalSeats())
+                            + ") would exceed zone capacity of " + zone.getCapacity());
+        }
+
+        // Auto-pick a row index for this row when the caller doesn't provide one.
+        // Uses the alphabetical position of rowLabel inside the existing rows of the zone.
+        Integer effectiveRowIndex = dto.getRowIndex();
+        if (effectiveRowIndex == null) {
+            List<SeatModel> existing = seatRepository.findByZoneId(zone.getId());
+            effectiveRowIndex = (int) existing.stream()
+                    .map(SeatModel::getRowLabel)
+                    .distinct()
+                    .filter(label -> label.compareToIgnoreCase(dto.getRowLabel()) < 0)
+                    .count();
+        }
+
+        List<SeatModel> seats = new ArrayList<>();
+        for (int i = 1; i <= dto.getTotalSeats(); i++) {
+            if (seatRepository.existsByZoneIdAndRowLabelAndSeatNumber(zone.getId(), dto.getRowLabel(), i)) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                        "Seat " + dto.getRowLabel() + i + " already exists in this zone");
+            }
+            SeatModel seat = new SeatModel();
+            seat.setZone(zone);
+            seat.setRowLabel(dto.getRowLabel());
+            seat.setSeatNumber(i);
+            seat.setRowIndex(effectiveRowIndex);
+            seat.setColIndex(i - 1);          // seat numbers are 1-based, col indices 0-based
+            seat.setDisplayOrder(i);
+            seats.add(seat);
+        }
+        seatRepository.saveAll(seats);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Create " + seats.size() + " seat(s) successful");
+        return response;
+    }
+
+    @Transactional
+    public List<SeatResponse> getSeatsByZone(Long zoneId) {
+        ZoneModel zone = zoneRepository.findById(zoneId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Zone not found"));
+        return mapSeats(seatRepository.findByZoneId(zone.getId()));
+    }
+
+    @Transactional
+    public List<SeatResponse> getSeatsByEvent(Long eventId) {
+        return mapSeats(seatRepository.findByZoneEventId(eventId));
+    }
+
+    @Transactional
+    public Map<String, String> updateSeat(Long seatId, SeatUpdateRequest dto) {
+        SeatModel seat = seatRepository.findById(seatId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Seat not found"));
+
+        boolean changed = !seat.getRowLabel().equals(dto.getRowLabel())
+                || !seat.getSeatNumber().equals(dto.getSeatNumber());
+
+        if (changed && seatRepository.existsByZoneIdAndRowLabelAndSeatNumber(
+                seat.getZone().getId(), dto.getRowLabel(), dto.getSeatNumber())) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                    "Seat " + dto.getRowLabel() + dto.getSeatNumber() + " already exists in this zone");
+        }
+
+        seat.setRowLabel(dto.getRowLabel());
+        seat.setSeatNumber(dto.getSeatNumber());
+        if (dto.getRowIndex() != null) seat.setRowIndex(dto.getRowIndex());
+        if (dto.getColIndex() != null) seat.setColIndex(dto.getColIndex());
+        if (dto.getDisplayOrder() != null) seat.setDisplayOrder(dto.getDisplayOrder());
+        seatRepository.save(seat);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Update seat successful");
+        return response;
+    }
+
+    @Transactional
+    public Map<String, String> deleteSeat(Long seatId) {
+        SeatModel seat = seatRepository.findById(seatId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Seat not found"));
+
+        String status = resolveSeatStatus(seatId);
+        if ("LOCKED".equals(status) || "BOOKED".equals(status)) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT,
+                    "Cannot delete seat that is locked or booked");
+        }
+
+        seatRepository.delete(seat);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Delete seat successful");
+        return response;
+    }
+
+    @Transactional
+    public Map<String, String> deleteSeatsByZone(Long zoneId) {
+        ZoneModel zone = zoneRepository.findById(zoneId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Zone not found"));
+
+        List<SeatModel> seats = seatRepository.findByZoneId(zone.getId());
+        for (SeatModel s : seats) {
+            String status = resolveSeatStatus(s.getId());
+            if ("LOCKED".equals(status) || "BOOKED".equals(status)) {
+                throw new ResponseStatusException(HttpStatus.CONFLICT,
+                        "Cannot delete: seat " + s.getRowLabel() + s.getSeatNumber() + " is locked or booked");
+            }
+        }
+        seatRepository.deleteAll(seats);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Delete " + seats.size() + " seat(s) successful");
+        return response;
+    }
+
+    private List<SeatResponse> mapSeats(List<SeatModel> seats) {
+        return seats.stream().map(seat -> {
+            String status = resolveSeatStatus(seat.getId());
+            ZoneModel zone = seat.getZone();
+            return new SeatResponse(
+                    seat.getId(),
+                    zone.getId(),
+                    zone.getName(),
+                    zone.getType() != null ? zone.getType().name() : null,
+                    zone.getPrice(),
+                    seat.getRowLabel(),
+                    seat.getSeatNumber(),
+                    status,
+                    seat.getRowIndex(),
+                    seat.getColIndex(),
+                    seat.getDisplayOrder());
+        }).toList();
+    }
+
+    /**
+     * Resolves the live status of a seat by inspecting Redis booking/lock keys.
+     * Made package-private so EventLayoutService can re-use the same source of truth.
+     */
+    String resolveSeatStatus(Long seatId) {
+        try {
+            if (redisTemplate.opsForValue().get("seat:booked:" + seatId) != null) {
+                return "BOOKED";
+            }
+            if (redisTemplate.opsForValue().get("seat:lock:" + seatId) != null) {
+                return "LOCKED";
+            }
+        } catch (Exception ex) {
+            // Redis is down — assume seat is available so the UI keeps working.
+            // Locking integrity is enforced at order-creation time anyway.
+        }
+        return "AVAILABLE";
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/service/TicketService.java">
+package com.supertix.api.service;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import com.supertix.api.dtos.ticket.AdminTicketResponse;
+import com.supertix.api.dtos.ticket.TicketResponse;
+import com.supertix.api.models.OrderModel;
+import com.supertix.api.models.TicketModel;
+import com.supertix.api.repositories.OrderRepository;
+import com.supertix.api.repositories.TicketRepository;
+
+import jakarta.transaction.Transactional;
+
+@Service
+public class TicketService {
+
+    private final TicketRepository ticketRepository;
+    private final OrderRepository orderRepository;
+
+    public TicketService(TicketRepository ticketRepository, OrderRepository orderRepository) {
+        this.ticketRepository = ticketRepository;
+        this.orderRepository = orderRepository;
+    }
+
+    @Transactional
+    public List<TicketResponse> getMyTickets(Long userId) {
+        List<OrderModel> orders = orderRepository.findByUserId(userId);
+
+        return orders.stream()
+                .flatMap(order -> ticketRepository.findByOrderId(order.getId()).stream())
+                .map(ticket -> new TicketResponse(
+                        ticket.getId(),
+                        ticket.getOrder().getEvent().getTitle(),
+                        ticket.getOrder().getEvent().getStartDate().toString(),
+                        ticket.getOrder().getEvent().getVenue().getName(),
+                        ticket.getSeat().getZone().getName(),
+                        ticket.getSeat().getRowLabel() + ticket.getSeat().getSeatNumber(),
+                        ticket.getQrCode(),
+                        ticket.getIsScanned(),
+                        ticket.getCreatedAt().toString()))
+                .toList();
+    }
+
+    @Transactional
+    public List<AdminTicketResponse> getAllTickets() {
+        return ticketRepository.findAll().stream()
+                .map(ticket -> new AdminTicketResponse(
+                        ticket.getId(),
+                        ticket.getOrder().getId(),
+                        ticket.getOrder().getStatus().name(),
+                        ticket.getOrder().getUser().getId(),
+                        ticket.getOrder().getUser().getName(),
+                        ticket.getOrder().getUser().getEmail(),
+                        ticket.getOrder().getEvent().getTitle(),
+                        ticket.getOrder().getEvent().getStartDate().toString(),
+                        ticket.getOrder().getEvent().getVenue().getName(),
+                        ticket.getSeat().getZone().getName(),
+                        ticket.getSeat().getZone().getType() != null
+                                ? ticket.getSeat().getZone().getType().name()
+                                : null,
+                        ticket.getSeat().getRowLabel() + ticket.getSeat().getSeatNumber(),
+                        ticket.getSeat().getZone().getPrice(),
+                        ticket.getQrCode(),
+                        ticket.getIsScanned(),
+                        ticket.getCreatedAt().toString()))
+                .toList();
+    }
+
+    public Map<String, String> scanTicket(Long ticketId) {
+        TicketModel ticket = ticketRepository.findById(ticketId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Ticket not found"));
+
+        if (ticket.getIsScanned()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Ticket already scanned");
+        }
+
+        ticket.setIsScanned(true);
+        ticketRepository.save(ticket);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Scan QR code successful");
+        return response;
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/service/UserService.java">
+package com.supertix.api.service;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import com.supertix.api.dtos.user.UserResponse;
+import com.supertix.api.dtos.user.UserUpdateInfoRequest;
+import com.supertix.api.dtos.user.UserUpdatePasswordRequest;
+import com.supertix.api.dtos.user.UserUpdateRequest;
+import com.supertix.api.models.UserModel;
+import com.supertix.api.repositories.UserRepository;
+
+@Service
+public class UserService {
+
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
+
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
+
+    public List<UserResponse> getAllUser() {
+        return userRepository.findAllByOrderByIdAsc()
+                .stream()
+                .map(user -> new UserResponse(
+                        user.getId(),
+                        user.getEmail(),
+                        user.getName(),
+                        user.getPhone(),
+                        user.getAddress(),
+                        user.getRole().name(),
+                        user.getStatus().name(),
+                        user.getCreatedAt().toString()))
+                .toList();
+    }
+
+    public UserResponse getUserProfile(Long userId) {
+        UserModel user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
+
+        return new UserResponse(
+                user.getId(),
+                user.getEmail(),
+                user.getName(),
+                user.getPhone(),
+                user.getAddress(),
+                user.getRole().name(),
+                user.getStatus().name(),
+                user.getCreatedAt().toString());
+    }
+
+    public Map<String, String> updateUserByAdmin(Long userId, UserUpdateRequest dto) {
+        UserModel user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
+
+        user.setEmail(dto.getEmail());
+        user.setName(dto.getName());
+        user.setPhone(dto.getPhone());
+        user.setAddress(dto.getAddress());
+        user.setRole(dto.getRole());
+        user.setStatus(dto.getStatus());
+        userRepository.save(user);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Update user successful");
+        return response;
+    }
+
+    public Map<String, String> updateUser(Long userId, UserUpdateInfoRequest dto) {
+        UserModel user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
+
+        user.setEmail(dto.getEmail());
+        user.setName(dto.getName());
+        user.setPhone(dto.getPhone());
+        user.setAddress(dto.getAddress());
+        userRepository.save(user);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Update user successful");
+        return response;
+    }
+
+    public Map<String, String> updatePassword(Long userId, UserUpdatePasswordRequest dto) {
+        UserModel user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
+
+        if (!passwordEncoder.matches(dto.getPassword(), user.getPassword())) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Current password is incorrect");
+        }
+
+        user.setPassword(passwordEncoder.encode(dto.getGetNewPassword()));
+        userRepository.save(user);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Update password successful");
+        return response;
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/service/ZoneService.java">
+package com.supertix.api.service;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import com.supertix.api.dtos.zone.ZoneCreateRequest;
+import com.supertix.api.dtos.zone.ZoneResponse;
+import com.supertix.api.dtos.zone.ZoneUpdateRequest;
+import com.supertix.api.enums.EventStatus;
+import com.supertix.api.models.EventModel;
+import com.supertix.api.models.SeatModel;
+import com.supertix.api.models.ZoneModel;
+import com.supertix.api.repositories.EventRepository;
+import com.supertix.api.repositories.SeatRepository;
+import com.supertix.api.repositories.ZoneRepository;
+
+import jakarta.transaction.Transactional;
+
+@Service
+public class ZoneService {
+
+    private final ZoneRepository zoneRepository;
+    private final EventRepository eventRepository;
+    private final SeatRepository seatRepository;
+
+    public ZoneService(ZoneRepository zoneRepository, EventRepository eventRepository, SeatRepository seatRepository) {
+        this.zoneRepository = zoneRepository;
+        this.eventRepository = eventRepository;
+        this.seatRepository = seatRepository;
+    }
+
+    public Map<String, String> createZone(ZoneCreateRequest dto) {
+        EventModel event = eventRepository.findById(dto.getEventId())
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Event id not found"));
+
+        if (event.getStatus() == EventStatus.CANCELLED && event.getStatus() == EventStatus.COMPLETED) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "This event is cancelled or completed");
+        }
+
+        ZoneModel zone = new ZoneModel();
+        zone.setEvent(event);
+        zone.setName(dto.getName());
+        zone.setPrice(dto.getPrice());
+        zone.setType(dto.getType());
+        zone.setCapacity(dto.getCapacity());
+
+        // Layout — keep nulls where the admin didn't set anything.
+        // The frontend renders an explicit "Layout not configured" state in that case.
+        zone.setLayoutX(dto.getLayoutX());
+        zone.setLayoutY(dto.getLayoutY());
+        zone.setLayoutWidth(dto.getLayoutWidth());
+        zone.setLayoutHeight(dto.getLayoutHeight());
+        zone.setRowCount(dto.getRowCount());
+        zone.setColCount(dto.getColCount());
+        if (dto.getStageDirection() != null) zone.setStageDirection(dto.getStageDirection());
+        if (dto.getDisplayOrder() != null) zone.setDisplayOrder(dto.getDisplayOrder());
+
+        if (dto.getRotationDeg() != null) zone.setRotationDeg(dto.getRotationDeg());
+        if (dto.getZIndex() != null) zone.setZIndex(dto.getZIndex());
+        if (dto.getShape() != null) zone.setShape(dto.getShape());
+        zone.setPolygonPoints(dto.getPolygonPoints());
+        zone.setFillColor(dto.getFillColor());
+        zone.setBorderColor(dto.getBorderColor());
+        if (dto.getLabelOffsetX() != null) zone.setLabelOffsetX(dto.getLabelOffsetX());
+        if (dto.getLabelOffsetY() != null) zone.setLabelOffsetY(dto.getLabelOffsetY());
+
+        if (dto.getParentZoneId() != null) {
+            ZoneModel parent = zoneRepository.findById(dto.getParentZoneId())
+                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Parent zone not found"));
+            if (!parent.getEvent().getId().equals(event.getId())) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                        "Parent zone must belong to the same event");
+            }
+            zone.setParentZone(parent);
+        }
+
+        zoneRepository.save(zone);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Create new zone success");
+        return response;
+    }
+
+    @Transactional
+    public List<ZoneResponse> getZonesByEvent(Long eventId) {
+        return zoneRepository.findByEventId(eventId)
+                .stream()
+                .map(this::toResponse)
+                .toList();
+    }
+
+    @Transactional
+    public Map<String, String> updateZone(Long zoneId, ZoneUpdateRequest dto) {
+        ZoneModel zone = zoneRepository.findById(zoneId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Zone not found"));
+
+        int totalCapacity = zoneRepository.findByEventId(zone.getEvent().getId())
+                .stream()
+                .filter(z -> !z.getId().equals(zoneId))
+                .mapToInt(ZoneModel::getCapacity)
+                .sum();
+
+        int venueCapacity = zone.getEvent().getVenue().getCapacity();
+
+        if (totalCapacity + dto.getCapacity() > venueCapacity) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                    "Total zone capacity exceeds venue capacity of " + venueCapacity);
+        }
+
+        zone.setName(dto.getName());
+        zone.setPrice(dto.getPrice());
+        zone.setType(dto.getType());
+        zone.setCapacity(dto.getCapacity());
+        zone.setStatus(dto.getStatus());
+
+        // Partial layout updates — null leaves the existing value alone.
+        if (dto.getLayoutX() != null) zone.setLayoutX(dto.getLayoutX());
+        if (dto.getLayoutY() != null) zone.setLayoutY(dto.getLayoutY());
+        if (dto.getLayoutWidth() != null) zone.setLayoutWidth(dto.getLayoutWidth());
+        if (dto.getLayoutHeight() != null) zone.setLayoutHeight(dto.getLayoutHeight());
+        if (dto.getRowCount() != null) zone.setRowCount(dto.getRowCount());
+        if (dto.getColCount() != null) zone.setColCount(dto.getColCount());
+        if (dto.getStageDirection() != null) zone.setStageDirection(dto.getStageDirection());
+        if (dto.getDisplayOrder() != null) zone.setDisplayOrder(dto.getDisplayOrder());
+
+        if (dto.getRotationDeg() != null) zone.setRotationDeg(dto.getRotationDeg());
+        if (dto.getZIndex() != null) zone.setZIndex(dto.getZIndex());
+        if (dto.getShape() != null) zone.setShape(dto.getShape());
+        if (dto.getPolygonPoints() != null) zone.setPolygonPoints(dto.getPolygonPoints());
+        if (dto.getFillColor() != null) zone.setFillColor(dto.getFillColor());
+        if (dto.getBorderColor() != null) zone.setBorderColor(dto.getBorderColor());
+        if (dto.getLabelOffsetX() != null) zone.setLabelOffsetX(dto.getLabelOffsetX());
+        if (dto.getLabelOffsetY() != null) zone.setLabelOffsetY(dto.getLabelOffsetY());
+
+        // Parent zone management — supports set, change, and explicit clear.
+        if (Boolean.TRUE.equals(dto.getClearParentZone())) {
+            zone.setParentZone(null);
+        } else if (dto.getParentZoneId() != null) {
+            if (dto.getParentZoneId().equals(zone.getId())) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                        "Zone cannot be its own parent");
+            }
+            ZoneModel parent = zoneRepository.findById(dto.getParentZoneId())
+                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Parent zone not found"));
+            if (!parent.getEvent().getId().equals(zone.getEvent().getId())) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                        "Parent zone must belong to the same event");
+            }
+            // Cycle detection — walk parent chain, refuse if we'd loop back.
+            ZoneModel cursor = parent;
+            Set<Long> seen = new HashSet<>();
+            seen.add(zone.getId());
+            while (cursor != null) {
+                if (!seen.add(cursor.getId())) {
+                    throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                            "Setting this parent would create a cycle");
+                }
+                cursor = cursor.getParentZone();
+            }
+            zone.setParentZone(parent);
+        }
+
+        zoneRepository.save(zone);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Update zone successful");
+        return response;
+    }
+
+    @Transactional
+    public Map<String, String> deleteZone(Long zoneId) {
+        ZoneModel zone = zoneRepository.findById(zoneId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Zone not found"));
+
+        // Detach any children pointing to this zone — application-level ON DELETE SET NULL.
+        zoneRepository.findByEventId(zone.getEvent().getId()).forEach(z -> {
+            if (z.getParentZone() != null && z.getParentZone().getId().equals(zoneId)) {
+                z.setParentZone(null);
+                zoneRepository.save(z);
+            }
+        });
+
+        List<SeatModel> seats = seatRepository.findByZoneId(zoneId);
+        seatRepository.deleteAll(seats);
+
+        zoneRepository.delete(zone);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Delete zone successful");
+        return response;
+    }
+
+    private ZoneResponse toResponse(ZoneModel zone) {
+        return new ZoneResponse(
+                zone.getId(),
+                zone.getEvent().getId(),
+                zone.getName(),
+                zone.getPrice(),
+                zone.getType().name(),
+                zone.getStatus() != null ? zone.getStatus().name() : "AVAILABLE",
+                zone.getCapacity(),
+                zone.getLayoutX(),
+                zone.getLayoutY(),
+                zone.getLayoutWidth(),
+                zone.getLayoutHeight(),
+                zone.getRowCount(),
+                zone.getColCount(),
+                zone.getStageDirection() != null ? zone.getStageDirection().name() : null,
+                zone.getDisplayOrder(),
+                zone.getRotationDeg(),
+                zone.getZIndex(),
+                zone.getShape() != null ? zone.getShape().name() : null,
+                zone.getPolygonPoints(),
+                zone.getFillColor(),
+                zone.getBorderColor(),
+                zone.getLabelOffsetX(),
+                zone.getLabelOffsetY(),
+                zone.getParentZone() != null ? zone.getParentZone().getId() : null);
+    }
+}
+</file>
+
+<file path="pom.xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.5.14</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.supertix</groupId>
+	<artifactId>api</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name/>
+	<description/>
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
+	<properties>
+		<java.version>21</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+				<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-api</artifactId>
+			<version>0.13.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-impl</artifactId>
+			<version>0.13.0</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-jackson</artifactId>
+			<version>0.13.0</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>5.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.8.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.imagekit-developer</groupId>
+			<artifactId>imagekit-java</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>default-compile</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+						<configuration>
+							<annotationProcessorPaths>
+								<path>
+									<groupId>org.projectlombok</groupId>
+									<artifactId>lombok</artifactId>
+								</path>
+							</annotationProcessorPaths>
+						</configuration>
+					</execution>
+					<execution>
+						<id>default-testCompile</id>
+						<phase>test-compile</phase>
+						<goals>
+							<goal>testCompile</goal>
+						</goals>
+						<configuration>
+							<annotationProcessorPaths>
+								<path>
+									<groupId>org.projectlombok</groupId>
+									<artifactId>lombok</artifactId>
+								</path>
+							</annotationProcessorPaths>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+
+</project>
+</file>
+
+<file path="src/main/java/com/supertix/api/config/SecurityConfig.java">
+package com.supertix.api.config;
+
+import java.util.List;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import com.supertix.api.filter.JwtFilter;
+
+@Configuration
+public class SecurityConfig {
+
+    private final JwtFilter jwtFilter;
+
+    public SecurityConfig(JwtFilter jwtFilter) {
+        this.jwtFilter = jwtFilter;
+    }
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+                .csrf(csrf -> csrf.disable())
+                .authorizeHttpRequests(auth -> auth
+
+                        .requestMatchers(
+                                "/v3/api-docs",
+                                "/v3/api-docs/**",
+                                "/swagger-ui/**",
+                                "/swagger-ui.html",
+                                "/api-docs-ui")
+                        .permitAll()
+
+                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+
+                        .requestMatchers("/auth/refresh-token").authenticated()
+
+                        .requestMatchers("/auth/**").permitAll()
+
+                        .requestMatchers("/admin/**").hasAuthority("ADMIN")
+                        .requestMatchers("/user/**").authenticated()
+
+                        .requestMatchers(HttpMethod.GET, "/venue/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/venue/**").hasAuthority("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/venue/**").hasAuthority("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/venue/**").hasAuthority("ADMIN")
+
+                        .requestMatchers(HttpMethod.GET, "/event/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/event/**").hasAuthority("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/event/**").hasAuthority("ADMIN")
+                        .requestMatchers(HttpMethod.PATCH, "/event/**").hasAuthority("ADMIN")
+
+                        .requestMatchers(HttpMethod.GET, "/zone/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/zone/**").hasAuthority("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/zone/**").hasAuthority("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/zone/**").hasAuthority("ADMIN")
+
+                        .requestMatchers(HttpMethod.GET, "/seat/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/seat/**").hasAuthority("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/seat/**").hasAuthority("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/seat/**").hasAuthority("ADMIN")
+
+                        .requestMatchers("/order/**").authenticated()
+
+                        .requestMatchers(HttpMethod.GET, "/ticket/**").authenticated()
+                        .requestMatchers(HttpMethod.PATCH, "/ticket/**").hasAuthority("ADMIN")
+
+                        .requestMatchers("/notification/**").authenticated()
+
+                        .anyRequest().authenticated())
+                .sessionManagement(session -> session
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+        return http.build();
+    }
+
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration config = new CorsConfiguration();
+        config.setAllowedOrigins(List.of("http://localhost:3000"));
+        config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
+        config.setAllowedHeaders(List.of("*"));
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", config);
+        return source;
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/controllers/AuthController.java">
+package com.supertix.api.controllers;
+
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.supertix.api.dtos.auth.SignInRequest;
+import com.supertix.api.dtos.auth.SignUpRequest;
+import com.supertix.api.service.AuthService;
+
+import jakarta.validation.Valid;
+
+@RestController
+@RequestMapping("/auth")
+public class AuthController {
+
+    private final AuthService authService;
+
+    public AuthController(AuthService authService) {
+        this.authService = authService;
+    }
+
+    @PostMapping("/signup")
+    public ResponseEntity<Map<String, String>> signUp(@Valid @RequestBody SignUpRequest dto) {
+        return ResponseEntity.ok(authService.signUp(dto));
+    }
+
+    @PostMapping("/signin")
+    public ResponseEntity<Map<String, String>> signIn(@Valid @RequestBody SignInRequest dto) {
+        return ResponseEntity.ok(authService.signIn(dto));
+    }
+
+    @PostMapping("/auth/refresh-token")
+    public ResponseEntity<Map<String, String>> refreshToken(
+            @RequestHeader("Authorization") String authHeader) {
+        return ResponseEntity.ok(authService.refreshToken(authHeader));
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/controllers/EventController.java">
+package com.supertix.api.controllers;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.supertix.api.dtos.event.EventCreateRequest;
+import com.supertix.api.dtos.event.EventDetailResponse;
+import com.supertix.api.dtos.event.EventLayoutResponse;
+import com.supertix.api.dtos.event.EventResponse;
+import com.supertix.api.dtos.event.EventUpdateRequest;
+import com.supertix.api.service.EventLayoutService;
+import com.supertix.api.service.EventService;
+
+import jakarta.validation.Valid;
+
+@RestController
+@RequestMapping("/event")
+public class EventController {
+
+    private final EventService eventService;
+    private final EventLayoutService eventLayoutService;
+
+    public EventController(EventService eventService, EventLayoutService eventLayoutService) {
+        this.eventService = eventService;
+        this.eventLayoutService = eventLayoutService;
+    }
+
+    @PostMapping("/create")
+    public ResponseEntity<Map<String, String>> createEvent(@Valid @RequestBody EventCreateRequest dto) {
+        return ResponseEntity.ok(eventService.createEvent(dto));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<EventResponse>> getAllEvent() {
+        return ResponseEntity.ok(eventService.getAllEvent());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<EventDetailResponse> getEventById(@PathVariable Long id) {
+        return ResponseEntity.ok(eventService.getEventById(id));
+    }
+
+    /**
+     * One-shot endpoint for the ticket-selection page.
+     * Returns the event header, the venue layout canvas, every zone with its
+     * position/orientation, and every seat with its current live status.
+     */
+    @GetMapping("/{id}/layout")
+    public ResponseEntity<EventLayoutResponse.Payload> getEventLayout(@PathVariable Long id) {
+        return ResponseEntity.ok(eventLayoutService.getEventLayout(id));
+    }
+
+    /**
+     * Admin convenience: bulk-fills sensible default layout values for any
+     * zone in this event that's missing them. Existing values are preserved.
+     */
+    @PostMapping("/{id}/layout/auto-arrange")
+    public ResponseEntity<java.util.Map<String, Object>> autoArrangeLayout(@PathVariable Long id) {
+        return ResponseEntity.ok(eventLayoutService.autoArrange(id));
+    }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Map<String, String>> updateEventById(@PathVariable Long id,
+            @Valid @RequestBody EventUpdateRequest dto) {
+        return ResponseEntity.ok(eventService.updateEventById(id, dto));
+    }
+
+    @PatchMapping("/cancel/{id}")
+    public ResponseEntity<Map<String, String>> cancelEventById(@PathVariable Long id) {
+        return ResponseEntity.ok(eventService.cancelEventById(id));
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/controllers/FileUploadController.java">
+package com.supertix.api.controllers;
+
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.supertix.api.service.FileUploadService;
+
+@RestController
+@RequestMapping("/upload")
+public class FileUploadController {
+
+    private final FileUploadService fileUploadService;
+
+    public FileUploadController(FileUploadService fileUploadService) {
+        this.fileUploadService = fileUploadService;
+    }
+
+    @PostMapping("/event")
+    public ResponseEntity<Map<String, String>> uploadEventImage(
+            @RequestParam("file") MultipartFile file) {
+        return ResponseEntity.ok(fileUploadService.uploadEventImage(file));
+    }
+
+    @PostMapping("/venue")
+    public ResponseEntity<Map<String, String>> uploadVenueImage(
+            @RequestParam("file") MultipartFile file) {
+        return ResponseEntity.ok(fileUploadService.uploadVenueImage(file));
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/event/EventCreateRequest.java">
+package com.supertix.api.dtos.event;
+
+import java.time.LocalDateTime;
+
+import com.supertix.api.enums.EventStatus;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class EventCreateRequest {
+
+    @NotBlank(message = "Title is required")
+    private String title;
+
+    @NotBlank(message = "Description is required")
+    private String description;
+
+    private String imageUrl;
+
+    private String imageFileId;
+
+    @NotNull(message = "Venue is required")
+    private Long venueId;
+
+    @NotNull(message = "Start date is required")
+    private LocalDateTime startDate;
+
+    @NotNull(message = "Sale start date is required")
+    private LocalDateTime saleStartDate;
+
+    @NotNull(message = "End date is required")
+    private LocalDateTime endDate;
+
+    @NotNull(message = "Status is required")
+    private EventStatus status;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/event/EventResponse.java">
+package com.supertix.api.dtos.event;
+
+import com.supertix.api.enums.EventStatus;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+public class EventResponse {
+
+    private Long id;
+    private Long venueId;
+    private String title;
+    private String description;
+    private String imageUrl;
+    private String venueName;
+    private String startDate;
+    private String saleStartDate;
+    private String endDate;
+    private EventStatus status;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/event/EventUpdateRequest.java">
+package com.supertix.api.dtos.event;
+
+import java.time.LocalDateTime;
+
+import com.supertix.api.enums.EventStatus;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class EventUpdateRequest {
+
+    @NotBlank(message = "Title is required")
+    private String title;
+
+    private String description;
+
+    private String imageUrl;
+
+    private String imageFileId;
+
+    @NotNull(message = "Venue is required")
+    private Long venueId;
+
+    @NotNull(message = "Start date is required")
+    private LocalDateTime startDate;
+
+    @NotNull(message = "Sale start date is required")
+    private LocalDateTime saleStartDate;
+
+    @NotNull(message = "End date is required")
+    private LocalDateTime endDate;
+
+    @NotNull(message = "Status is required")
+    private EventStatus status;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/venue/VenueCreateRequest.java">
+package com.supertix.api.dtos.venue;
+
+import com.supertix.api.enums.VenueStatus;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class VenueCreateRequest {
+
+    @NotBlank(message = "Name is required")
+    private String name;
+
+    @NotNull(message = "Capacity is required")
+    private Integer capacity;
+
+    @NotNull(message = "Address is required")
+    private String address;
+
+    private String imageUrl;
+
+    private String imageFileId;
+
+    @NotNull(message = "Status is required")
+    private VenueStatus status;
+
+    // === Layout config ===
+    private Integer layoutWidth;
+    private Integer layoutHeight;
+    /** Optional venue-map background image (floor plan / photo). */
+    private String mapImageUrl;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/venue/VenueResponse.java">
+package com.supertix.api.dtos.venue;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class VenueResponse {
+
+    private Long id;
+    private String name;
+    private String address;
+    private Integer capacity;
+    private String imageUrl;
+    private String status;
+    private String createdAt;
+
+    // Layout canvas size used for rendering the venue zone map
+    private Integer layoutWidth;
+    private Integer layoutHeight;
+    private String mapImageUrl;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/dtos/venue/VenueUpdateRequest.java">
+package com.supertix.api.dtos.venue;
+
+import com.supertix.api.enums.VenueStatus;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class VenueUpdateRequest {
+
+    @NotBlank(message = "Name is required")
+    private String name;
+
+    @NotNull(message = "Capacity is required")
+    private Integer capacity;
+
+    @NotNull(message = "Address is required")
+    private String address;
+
+    private String imageUrl;
+
+    private String imageFileId;
+
+    @NotNull(message = "Status is required")
+    private VenueStatus status;
+
+    private Integer layoutWidth;
+    private Integer layoutHeight;
+    private String mapImageUrl;
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/models/VenueModel.java">
+package com.supertix.api.models;
+
+import java.time.LocalDateTime;
+
+import com.supertix.api.enums.VenueStatus;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "venues")
+@Getter
+@Setter
+@NoArgsConstructor
+public class VenueModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = false)
+    private String address;
+
+    @Column(nullable = false)
+    private Integer capacity;
+
+    @Column(length = 1000)
+    private String imageUrl;
+
+    @Column
+    private String imageFileId;
+
+    // === Venue layout canvas (used by the zone map) ===
+    // Logical pixel size used to position zones in the venue diagram.
+    // Frontend scales this to fit available width while keeping aspect ratio.
+    @Column(name = "layout_width")
+    private Integer layoutWidth = 1000;
+
+    @Column(name = "layout_height")
+    private Integer layoutHeight = 700;
+
+    /**
+     * Optional background image for the venue map (floor plan, photo, etc.).
+     * Drawn under the zones in the SVG canvas.
+     */
+    @Column(name = "map_image_url", length = 1000)
+    private String mapImageUrl;
+
+    @Enumerated(EnumType.STRING)
+    private VenueStatus status = VenueStatus.ACTIVE;
+
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
+
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now().withNano(0);
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/service/AuthService.java">
+package com.supertix.api.service;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import com.supertix.api.dtos.auth.SignInRequest;
+import com.supertix.api.dtos.auth.SignUpRequest;
+import com.supertix.api.enums.UserStatus;
+import com.supertix.api.models.UserModel;
+import com.supertix.api.repositories.UserRepository;
+
+import jakarta.transaction.Transactional;
+
+@Service
+public class AuthService {
+
+    private final UserRepository userRepository;
+    private final JwtService jwtService;
+    private final PasswordEncoder passwordEncoder;
+
+    public AuthService(UserRepository userRepository, JwtService jwtService, PasswordEncoder passwordEncoder) {
+        this.userRepository = userRepository;
+        this.jwtService = jwtService;
+        this.passwordEncoder = passwordEncoder;
+    }
+
+    @Transactional
+    public Map<String, String> signUp(SignUpRequest dto) {
+        if (userRepository.existsByEmail(dto.getEmail())) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Email is already exists");
+        }
+
+        UserModel user = new UserModel();
+        user.setEmail(dto.getEmail());
+        user.setName(dto.getName());
+        user.setPassword(passwordEncoder.encode(dto.getPassword()));
+        userRepository.save(user);
+
+        String token = jwtService.generateToken(user, false);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("token", token);
+        response.put("message", "Register successful");
+        return response;
+    }
+
+    public Map<String, String> signIn(SignInRequest dto) {
+        UserModel user = userRepository.findByEmail(dto.getEmail())
+                .orElseThrow(
+                        () -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Email or password is incorrect"));
+
+        if (!passwordEncoder.matches(dto.getPassword(), user.getPassword())) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Email or password is incorrect");
+        }
+
+        if (user.getStatus() == UserStatus.INACTIVE) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Account has been suspended");
+        }
+
+        String token = jwtService.generateToken(user, dto.isKeepSignedIn());
+
+        Map<String, String> response = new HashMap<>();
+        response.put("token", token);
+        response.put("message", "Login successful");
+        return response;
+    }
+
+    public Map<String, String> refreshToken(String authHeader) {
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Invalid token");
+        }
+
+        String token = authHeader.substring(7);
+
+        if (!jwtService.isTokenValid(token)) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Token expired");
+        }
+
+        Long userId = jwtService.extractUserId(token);
+        UserModel user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
+
+        if (user.getStatus() == UserStatus.INACTIVE) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Account has been suspended");
+        }
+
+        boolean keepSignedIn = jwtService.extractClaims(token).getExpiration().getTime()
+                - jwtService.extractClaims(token).getIssuedAt().getTime() > 1000L * 60 * 60 * 24 * 2;
+
+        String newToken = jwtService.generateToken(user, keepSignedIn);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("token", newToken);
+        response.put("message", "Token refreshed");
+        return response;
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/service/FileUploadService.java">
+package com.supertix.api.service;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.server.ResponseStatusException;
+
+import io.imagekit.sdk.ImageKit;
+import io.imagekit.sdk.config.Configuration;
+import io.imagekit.sdk.models.FileCreateRequest;
+import io.imagekit.sdk.models.results.Result;
+
+@Service
+public class FileUploadService {
+
+    @Value("${imagekit.private-key}")
+    private String privateKey;
+
+    @Value("${imagekit.public-key}")
+    private String publicKey;
+
+    @Value("${imagekit.url-endpoint}")
+    private String urlEndpoint;
+
+    public Map<String, String> uploadEventImage(MultipartFile file) {
+        return uploadToFolder(file, "/events");
+    }
+
+    public Map<String, String> uploadVenueImage(MultipartFile file) {
+        return uploadToFolder(file, "/venues");
+    }
+
+    public void deleteFile(String fileId) {
+        try {
+            ImageKit imageKit = ImageKit.getInstance();
+            Configuration config = new Configuration(publicKey, privateKey, urlEndpoint);
+            imageKit.setConfig(config);
+            imageKit.deleteFile(fileId);
+        } catch (Exception e) {
+        }
+    }
+
+    private Map<String, String> uploadToFolder(MultipartFile file, String folder) {
+        try {
+            ImageKit imageKit = ImageKit.getInstance();
+            Configuration config = new Configuration(publicKey, privateKey, urlEndpoint);
+            imageKit.setConfig(config);
+
+            FileCreateRequest request = new FileCreateRequest(
+                    file.getBytes(),
+                    UUID.randomUUID() + "_" + file.getOriginalFilename());
+            request.setFolder(folder);
+
+            Result result = imageKit.upload(request);
+
+            Map<String, String> response = new HashMap<>();
+            response.put("url", result.getUrl());
+            response.put("fileId", result.getFileId());
+            return response;
+        } catch (Exception e) {
+            throw new ResponseStatusException(
+                    HttpStatus.INTERNAL_SERVER_ERROR, "Failed to upload file");
+        }
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/service/VenueService.java">
+package com.supertix.api.service;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import com.supertix.api.dtos.venue.VenueCreateRequest;
+import com.supertix.api.dtos.venue.VenueResponse;
+import com.supertix.api.dtos.venue.VenueUpdateRequest;
+import com.supertix.api.models.VenueModel;
+import com.supertix.api.repositories.VenueRepository;
+
+@Service
+public class VenueService {
+
+    private final VenueRepository venueRepository;
+    private final FileUploadService fileUploadService;
+
+    public VenueService(VenueRepository venueRepository, FileUploadService fileUploadService) {
+        this.venueRepository = venueRepository;
+        this.fileUploadService = fileUploadService;
+    }
+
+    public List<VenueResponse> getAllVenues() {
+        return venueRepository.findAllByOrderByIdAsc()
+                .stream()
+                .map(this::toResponse)
+                .toList();
+    }
+
+    public Map<String, String> createVenue(VenueCreateRequest dto) {
+        if (venueRepository.existsByName(dto.getName())) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Vanue name already exists");
+        }
+
+        VenueModel venue = new VenueModel();
+        venue.setName(dto.getName());
+        venue.setAddress(dto.getAddress());
+        venue.setCapacity(dto.getCapacity());
+        venue.setImageUrl(dto.getImageUrl());
+        venue.setImageFileId(dto.getImageFileId());
+        venue.setStatus(dto.getStatus());
+        if (dto.getLayoutWidth() != null) venue.setLayoutWidth(dto.getLayoutWidth());
+        if (dto.getLayoutHeight() != null) venue.setLayoutHeight(dto.getLayoutHeight());
+        venue.setMapImageUrl(dto.getMapImageUrl());
+        venueRepository.save(venue);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Create venue successful");
+        return response;
+    }
+
+    public Map<String, String> updateVenueById(Long venueId, VenueUpdateRequest dto) {
+        VenueModel venue = venueRepository.findById(venueId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Venue not found"));
+
+        boolean hasNewImage = dto.getImageFileId() != null && !dto.getImageFileId().isEmpty();
+        boolean hasOldImage = venue.getImageFileId() != null && !venue.getImageFileId().isEmpty();
+        boolean imageChanged = hasNewImage && !dto.getImageFileId().equals(venue.getImageFileId());
+
+        if (imageChanged && hasOldImage) {
+            fileUploadService.deleteFile(venue.getImageFileId());
+        }
+
+        venue.setName(dto.getName());
+        venue.setAddress(dto.getAddress());
+        venue.setCapacity(dto.getCapacity());
+        venue.setImageUrl(dto.getImageUrl());
+        venue.setImageFileId(dto.getImageFileId());
+        venue.setStatus(dto.getStatus());
+        if (dto.getLayoutWidth() != null) venue.setLayoutWidth(dto.getLayoutWidth());
+        if (dto.getLayoutHeight() != null) venue.setLayoutHeight(dto.getLayoutHeight());
+        if (dto.getMapImageUrl() != null) venue.setMapImageUrl(dto.getMapImageUrl());
+        venueRepository.save(venue);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Update venue Successful");
+        return response;
+    }
+
+    public Map<String, String> deleteVunue(Long venueId) {
+        VenueModel venue = venueRepository.findById(venueId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Venue not found"));
+
+        if (venue.getImageFileId() != null) {
+            fileUploadService.deleteFile(venue.getImageFileId());
+        }
+        venueRepository.delete(venue);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Delete venue Successful");
+        return response;
+    }
+
+    private VenueResponse toResponse(VenueModel venue) {
+        return new VenueResponse(
+                venue.getId(),
+                venue.getName(),
+                venue.getAddress(),
+                venue.getCapacity(),
+                venue.getImageUrl(),
+                venue.getStatus().name(),
+                venue.getCreatedAt().toString(),
+                venue.getLayoutWidth(),
+                venue.getLayoutHeight(),
+                venue.getMapImageUrl());
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/models/EventModel.java">
+package com.supertix.api.models;
+
+import java.time.LocalDateTime;
+
+import com.supertix.api.enums.EventStatus;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "events")
+@Getter
+@Setter
+@NoArgsConstructor
+public class EventModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "venue_id", nullable = false)
+    private VenueModel venue;
+
+    @Column(nullable = false)
+    private String title;
+
+    @Column(columnDefinition = "TEXT")
+    private String description;
+
+    @Column(length = 1000)
+    private String imageUrl;
+
+    @Column
+    private String imageFileId;
+
+    @Column(nullable = false)
+    private LocalDateTime startDate;
+
+    @Column(nullable = false)
+    private LocalDateTime saleStartDate;
+
+    @Column(nullable = false)
+    private LocalDateTime endDate;
+
+    @Enumerated(EnumType.STRING)
+    private EventStatus status;
+
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
+
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now().withNano(0);
+    }
+}
+</file>
+
+<file path="src/main/java/com/supertix/api/service/EventService.java">
+package com.supertix.api.service;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import com.supertix.api.dtos.event.EventCreateRequest;
+import com.supertix.api.dtos.event.EventDetailResponse;
+import com.supertix.api.dtos.event.EventResponse;
+import com.supertix.api.dtos.event.EventUpdateRequest;
+import com.supertix.api.enums.EventStatus;
+import com.supertix.api.enums.VenueStatus;
+import com.supertix.api.models.EventModel;
+import com.supertix.api.models.VenueModel;
+import com.supertix.api.repositories.EventRepository;
+import com.supertix.api.repositories.VenueRepository;
+
+import jakarta.transaction.Transactional;
+
+@Service
+public class EventService {
+
+    private final EventRepository eventRepository;
+    private final VenueRepository venueRepository;
+    private final FileUploadService fileUploadService;
+
+    public EventService(EventRepository eventRepository, VenueRepository venueRepository,
+            FileUploadService fileUploadService) {
+        this.eventRepository = eventRepository;
+        this.venueRepository = venueRepository;
+        this.fileUploadService = fileUploadService;
+    }
+
+    @Transactional
+    public List<EventResponse> getAllEvent() {
+        return eventRepository.findAll()
+                .stream()
+                .map(event -> new EventResponse(
+                        event.getId(),
+                        event.getVenue().getId(),
+                        event.getTitle(),
+                        event.getDescription(),
+                        event.getImageUrl(),
+                        event.getVenue().getName(),
+                        event.getStartDate().toString(),
+                        event.getSaleStartDate().toString(),
+                        event.getEndDate().toString(),
+                        event.getStatus()))
+                .toList();
+    }
+
+    @Transactional
+    public EventDetailResponse getEventById(Long eventId) {
+        EventModel event = eventRepository.findById(eventId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Event is not found"));
+
+        return new EventDetailResponse(
+                event.getId(),
+                event.getVenue().getId(),
+                event.getTitle(),
+                event.getDescription(),
+                event.getImageUrl(),
+                event.getVenue().getName(),
+                event.getVenue().getAddress(),
+                event.getStartDate().toString(),
+                event.getSaleStartDate().toString(),
+                event.getEndDate().toString(),
+                event.getStatus());
+    }
+
+    public Map<String, String> createEvent(EventCreateRequest dto) {
+        VenueModel venue = venueRepository.findById(dto.getVenueId())
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
+                        "Venue is not found"));
+
+        if (venue.getStatus() == VenueStatus.INACTIVE) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Venue is inactive");
+        }
+
+        EventModel event = new EventModel();
+        event.setVenue(venue);
+        event.setTitle(dto.getTitle());
+        event.setDescription(dto.getDescription());
+        event.setImageUrl(dto.getImageUrl());
+        event.setImageFileId(dto.getImageFileId());
+        event.setStartDate(dto.getStartDate());
+        event.setSaleStartDate(dto.getSaleStartDate());
+        event.setEndDate(dto.getEndDate());
+        event.setStatus(EventStatus.UPCOMING);
+        eventRepository.save(event);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Create event successful");
+        return response;
+    }
+
+    public Map<String, String> updateEventById(Long eventId, EventUpdateRequest dto) {
+        EventModel event = eventRepository.findById(eventId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Event is not found"));
+
+        VenueModel venue = venueRepository.findById(dto.getVenueId())
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Venue is not found"));
+
+        boolean hasNewImage = dto.getImageFileId() != null && !dto.getImageFileId().isEmpty();
+        boolean hasOldImage = event.getImageFileId() != null && !event.getImageFileId().isEmpty();
+        boolean imageChanged = hasNewImage && !dto.getImageFileId().equals(event.getImageFileId());
+
+        if (imageChanged && hasOldImage) {
+            fileUploadService.deleteFile(event.getImageFileId());
+        }
+
+        event.setVenue(venue);
+        event.setTitle(dto.getTitle());
+        event.setDescription(dto.getDescription());
+        event.setImageUrl(dto.getImageUrl());
+        event.setImageFileId(dto.getImageFileId());
+        event.setStartDate(dto.getStartDate());
+        event.setSaleStartDate(dto.getSaleStartDate());
+        event.setEndDate(dto.getEndDate());
+        event.setStatus(dto.getStatus());
+        eventRepository.save(event);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Update event successful");
+        return response;
+    }
+
+    public Map<String, String> cancelEventById(Long eventId) {
+        EventModel event = eventRepository.findById(eventId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Event is not found"));
+
+        event.setStatus(EventStatus.CANCELLED);
+        eventRepository.save(event);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Cancel event successful");
+        return response;
+    }
+}
+</file>
+
+<file path="src/main/resources/application.properties">
+spring.application.name=api
+
+spring.profiles.active=local
+
+spring.datasource.url=${SPRING_DATASOURCE_URL}
+spring.datasource.username=${SPRING_DATASOURCE_USERNAME}
+spring.datasource.password=${SPRING_DATASOURCE_PASSWORD}
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.open-in-view=false
+
+springdoc.swagger-ui.path=/api-docs-ui
+springdoc.swagger-ui.persist-authorization=true
+
+spring.data.redis.host=localhost
+spring.data.redis.port=6379
+
+jwt.secret=${JWT_SECRET}
+
+imagekit.public-key=${IMAGEKIT_PUBLIC_KEY}
+imagekit.private-key=${IMAGEKIT_PRIVATE_KEY}
+imagekit.url-endpoint=${IMAGEKIT_URL_ENDPOINT}
+</file>
+
+</files>

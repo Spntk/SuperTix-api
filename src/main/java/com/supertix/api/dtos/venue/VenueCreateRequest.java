@@ -28,4 +28,16 @@ public class VenueCreateRequest {
 
     @NotNull(message = "Status is required")
     private VenueStatus status;
+
+    // === Layout config ===
+    private Integer layoutWidth;
+    private Integer layoutHeight;
+    /** Optional venue-map background image (floor plan / photo). */
+    private String mapImageUrl;
+
+    // === Stage placement on the venue map (all optional) ===
+    private Integer stageX;
+    private Integer stageY;
+    private Integer stageWidth;
+    private Integer stageHeight;
 }

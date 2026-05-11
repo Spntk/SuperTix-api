@@ -28,4 +28,13 @@ public class VenueUpdateRequest {
 
     @NotNull(message = "Status is required")
     private VenueStatus status;
+
+    private Integer layoutWidth;
+    private Integer layoutHeight;
+    private String mapImageUrl;
+
+    private Integer stageX;
+    private Integer stageY;
+    private Integer stageWidth;
+    private Integer stageHeight;
 }

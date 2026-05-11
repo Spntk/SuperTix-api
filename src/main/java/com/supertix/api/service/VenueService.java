@@ -28,14 +28,7 @@ public class VenueService {
     public List<VenueResponse> getAllVenues() {
         return venueRepository.findAllByOrderByIdAsc()
                 .stream()
-                .map(venue -> new VenueResponse(
-                        venue.getId(),
-                        venue.getName(),
-                        venue.getAddress(),
-                        venue.getCapacity(),
-                        venue.getImageUrl(),
-                        venue.getStatus().name(),
-                        venue.getCreatedAt().toString()))
+                .map(this::toResponse)
                 .toList();
     }
 
@@ -51,6 +44,13 @@ public class VenueService {
         venue.setImageUrl(dto.getImageUrl());
         venue.setImageFileId(dto.getImageFileId());
         venue.setStatus(dto.getStatus());
+        if (dto.getLayoutWidth() != null) venue.setLayoutWidth(dto.getLayoutWidth());
+        if (dto.getLayoutHeight() != null) venue.setLayoutHeight(dto.getLayoutHeight());
+        venue.setMapImageUrl(dto.getMapImageUrl());
+        venue.setStageX(dto.getStageX());
+        venue.setStageY(dto.getStageY());
+        venue.setStageWidth(dto.getStageWidth());
+        venue.setStageHeight(dto.getStageHeight());
         venueRepository.save(venue);
 
         Map<String, String> response = new HashMap<>();
@@ -76,6 +76,13 @@ public class VenueService {
         venue.setImageUrl(dto.getImageUrl());
         venue.setImageFileId(dto.getImageFileId());
         venue.setStatus(dto.getStatus());
+        if (dto.getLayoutWidth() != null) venue.setLayoutWidth(dto.getLayoutWidth());
+        if (dto.getLayoutHeight() != null) venue.setLayoutHeight(dto.getLayoutHeight());
+        if (dto.getMapImageUrl() != null) venue.setMapImageUrl(dto.getMapImageUrl());
+        if (dto.getStageX() != null) venue.setStageX(dto.getStageX());
+        if (dto.getStageY() != null) venue.setStageY(dto.getStageY());
+        if (dto.getStageWidth() != null) venue.setStageWidth(dto.getStageWidth());
+        if (dto.getStageHeight() != null) venue.setStageHeight(dto.getStageHeight());
         venueRepository.save(venue);
 
         Map<String, String> response = new HashMap<>();
@@ -95,5 +102,23 @@ public class VenueService {
         Map<String, String> response = new HashMap<>();
         response.put("message", "Delete venue Successful");
         return response;
+    }
+
+    private VenueResponse toResponse(VenueModel venue) {
+        return new VenueResponse(
+                venue.getId(),
+                venue.getName(),
+                venue.getAddress(),
+                venue.getCapacity(),
+                venue.getImageUrl(),
+                venue.getStatus().name(),
+                venue.getCreatedAt().toString(),
+                venue.getLayoutWidth(),
+                venue.getLayoutHeight(),
+                venue.getMapImageUrl(),
+                venue.getStageX(),
+                venue.getStageY(),
+                venue.getStageWidth(),
+                venue.getStageHeight());
     }
 }

@@ -16,4 +16,8 @@ public class SeatUpdateRequest {
 
     @NotNull(message = "Seat number is required")
     private Integer seatNumber;
+
+    private Integer rowIndex;
+    private Integer colIndex;
+    private Integer displayOrder;
 }

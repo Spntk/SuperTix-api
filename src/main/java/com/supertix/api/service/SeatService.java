@@ -50,6 +50,18 @@ public class SeatService {
                             + ") would exceed zone capacity of " + zone.getCapacity());
         }
 
+        // Auto-pick a row index for this row when the caller doesn't provide one.
+        // Uses the alphabetical position of rowLabel inside the existing rows of the zone.
+        Integer effectiveRowIndex = dto.getRowIndex();
+        if (effectiveRowIndex == null) {
+            List<SeatModel> existing = seatRepository.findByZoneId(zone.getId());
+            effectiveRowIndex = (int) existing.stream()
+                    .map(SeatModel::getRowLabel)
+                    .distinct()
+                    .filter(label -> label.compareToIgnoreCase(dto.getRowLabel()) < 0)
+                    .count();
+        }
+
         List<SeatModel> seats = new ArrayList<>();
         for (int i = 1; i <= dto.getTotalSeats(); i++) {
             if (seatRepository.existsByZoneIdAndRowLabelAndSeatNumber(zone.getId(), dto.getRowLabel(), i)) {
@@ -60,6 +72,9 @@ public class SeatService {
             seat.setZone(zone);
             seat.setRowLabel(dto.getRowLabel());
             seat.setSeatNumber(i);
+            seat.setRowIndex(effectiveRowIndex);
+            seat.setColIndex(i - 1);          // seat numbers are 1-based, col indices 0-based
+            seat.setDisplayOrder(i);
             seats.add(seat);
         }
         seatRepository.saveAll(seats);
@@ -97,6 +112,9 @@ public class SeatService {
 
         seat.setRowLabel(dto.getRowLabel());
         seat.setSeatNumber(dto.getSeatNumber());
+        if (dto.getRowIndex() != null) seat.setRowIndex(dto.getRowIndex());
+        if (dto.getColIndex() != null) seat.setColIndex(dto.getColIndex());
+        if (dto.getDisplayOrder() != null) seat.setDisplayOrder(dto.getDisplayOrder());
         seatRepository.save(seat);
 
         Map<String, String> response = new HashMap<>();
@@ -154,11 +172,18 @@ public class SeatService {
                     zone.getPrice(),
                     seat.getRowLabel(),
                     seat.getSeatNumber(),
-                    status);
+                    status,
+                    seat.getRowIndex(),
+                    seat.getColIndex(),
+                    seat.getDisplayOrder());
         }).toList();
     }
 
-    private String resolveSeatStatus(Long seatId) {
+    /**
+     * Resolves the live status of a seat by inspecting Redis booking/lock keys.
+     * Made package-private so EventLayoutService can re-use the same source of truth.
+     */
+    String resolveSeatStatus(Long seatId) {
         try {
             if (redisTemplate.opsForValue().get("seat:booked:" + seatId) != null) {
                 return "BOOKED";

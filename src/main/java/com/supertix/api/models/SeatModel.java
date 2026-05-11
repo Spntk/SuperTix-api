@@ -40,6 +40,19 @@ public class SeatModel {
     @Column(name = "seat_number", nullable = false)
     private Integer seatNumber;
 
+    // === Grid coordinates inside the zone ===
+    // 0-based indices used by SeatGrid to position seats spatially
+    // instead of relying on insertion / DB order.
+    @Column(name = "row_index")
+    private Integer rowIndex;
+
+    @Column(name = "col_index")
+    private Integer colIndex;
+
+    /** Optional explicit ordering hint within a row. */
+    @Column(name = "display_order")
+    private Integer displayOrder;
+
     @Column(updatable = false)
     private LocalDateTime createdAt;
 
